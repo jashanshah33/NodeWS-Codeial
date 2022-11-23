@@ -1,7 +1,11 @@
 module.exports.profile = function (req, res) {
-  return res.end("<h1>User Profile</h1>");
+  return res.render("userProfile", {
+    title: "Profile",
+  });
 };
 
 module.exports.friends = function (req, res) {
-  return res.end("<h1>User Friends</h1>");
+  return res.render("userFriends", {
+    title: "Friends",
+  });
 };
