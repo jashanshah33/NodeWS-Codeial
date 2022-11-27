@@ -6,6 +6,8 @@ const postsController = require("../controllers/posts_controller");
 console.log("Router LOaded");
 
 router.get("/", homeController.home);
+router.get("/signup", homeController.signup);
+router.get("/login", homeController.login);
 router.get("/posts", postsController.posts);
 router.use("/users", require("./users"));
 
