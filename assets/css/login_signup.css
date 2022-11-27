@@ -1,10 +1,19 @@
+.outer_container {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
-  height: 60vh;
+  width: 50%;
+  height: 60%;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
+  border-radius: 5%;
 }
 form div {
   display: flex;
@@ -18,16 +27,21 @@ div label {
 div {
   margin-top: 1.5rem;
 }
+div input {
+  border: 2px solid rgb(197, 197, 197);
+  height: 1.3rem;
+  width: 13rem;
+}
 
 button {
   background-color: rgb(72, 72, 225);
-  padding: 8px 15px;
+  padding: 8px 18px;
   color: white;
   border: none;
   transition: all 0.4s;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 button:hover {
