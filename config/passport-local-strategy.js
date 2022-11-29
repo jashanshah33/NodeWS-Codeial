@@ -7,10 +7,10 @@ const User = require("../models/user");
 passport.use(
   new LocalStrategy(
     {
-      usernameField: "email",
+      usernameField: "email"
     },
     function (email, password, done) {
-      User.find({ email: email }, function (err, user) {
+      User.findOne({ email: email }, function (err, user) {
         if (err) {
           console.log("Error in finding user --> passport");
           return done(err);
@@ -42,4 +42,26 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-module.exports = passport
+passport.checkAuthentication = function(req, res, next){
+  if (req.isAuthenticated()) {
+    return next()
+  }
+  return res.redirect('/users/login')
+}
+
+passport.setAuthenticatedUser = function(req, res, next){
+  if (req.isAuthenticated()) {
+    res.locals.user = req.user
+  }
+  next()
+}
+
+passport.checkAuthenticationForPages = function(req, res, next){
+  if (req.isAuthenticated()) {
+    return res.redirect('/')
+  }
+  return next()
+}
+
+
+module.exports = passport;

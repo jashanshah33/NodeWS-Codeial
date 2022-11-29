@@ -42,13 +42,14 @@ module.exports.createUser = function (req, res) {
           console.log("Error while creating user in signup");
           return res.redirect("/users/signup");
         }
-        return res.redirect("/users/login");
       });
-    }    
+      return res.redirect("/users/login");
+
+    }
     return res.redirect("back");
   });
 };
 
 module.exports.createUserSession = function (req, res) {
-  console.log(req.body);
+  return res.redirect("/");
 };
