@@ -56,12 +56,6 @@ passport.setAuthenticatedUser = function(req, res, next){
   next()
 }
 
-passport.checkAuthenticationForPages = function(req, res, next){
-  if (req.isAuthenticated()) {
-    return res.redirect('/')
-  }
-  return next()
-}
 
 
 module.exports = passport;

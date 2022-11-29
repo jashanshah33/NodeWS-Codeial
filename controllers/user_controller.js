@@ -13,12 +13,18 @@ module.exports.friends = function (req, res) {
 };
 
 module.exports.signup = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
   return res.render("user_signup", {
     title: "signup",
   });
 };
 
 module.exports.login = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
   return res.render("user_login", {
     title: "Login",
   });
@@ -44,12 +50,11 @@ module.exports.createUser = function (req, res) {
         }
       });
       return res.redirect("/users/login");
-
     }
     return res.redirect("back");
   });
 };
 
 module.exports.createUserSession = function (req, res) {
-  return res.redirect("/");
+  return res.redirect("/users/profile");
 };
