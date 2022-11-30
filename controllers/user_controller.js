@@ -58,3 +58,12 @@ module.exports.createUser = function (req, res) {
 module.exports.createUserSession = function (req, res) {
   return res.redirect("/users/profile");
 };
+
+module.exports.destroyUserSession = function (req, res) {
+  req.logout(function (err) {
+    if (err) {
+      console.log(err);
+    }
+    return res.redirect("/users/login");
+  });
+};

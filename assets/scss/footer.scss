@@ -11,16 +11,15 @@ footer {
   font-size: 1.2rem;
   color: black;
 }
-
-.footer_nav_container ul {
-  list-style: none;
-}
-
-.footer_nav_container li {
-  margin-top: 5px;
-}
-
-.footer_nav_container a {
-  text-decoration: none;
-  color: inherit;
+.footer_nav_container {
+  ul {
+    list-style: none;
+  }
+  li {
+    margin-top: 5px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }

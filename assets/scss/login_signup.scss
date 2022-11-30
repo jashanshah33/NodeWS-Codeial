@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.outer_header_form_container form {
+
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,26 +15,25 @@
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
   border-radius: 5%;
 }
-
-.outer_header_form_container div {
+ div {
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
-}
 
-.outer_header_form_container label {
+}
+ label {
   align-self: flex-start;
   font-size: 1.1rem;
 }
 
-.outer_header_form_container input {
-  border: 2px solid #c5c5c5;
+input {
+  border: 2px solid rgb(197, 197, 197);
   height: 1.3rem;
   width: 13rem;
 }
 
-.outer_header_form_container button {
-  background-color: #4848e1;
+button {
+  background-color: rgb(72, 72, 225);
   padding: 8px 18px;
   color: white;
   border: none;
@@ -44,16 +43,17 @@
   font-size: 1rem;
 }
 
-.outer_header_form_container button:hover {
-  background-color: #bababa;
+button:hover {
+  background-color: rgb(186, 186, 186);
+  color: black;
+}
+#login_btn {
+  background-color: rgb(136, 73, 243);
+}
+
+#login_btn:hover {
+  background-color: rgb(186, 186, 186);
   color: black;
 }
 
-.outer_header_form_container #login_btn {
-  background-color: #8849f3;
-}
-
-.outer_header_form_container #login_btn:hover {
-  background-color: #bababa;
-  color: black;
 }
