@@ -1,4 +1,22 @@
-body {
-  background-color: #ed9696;
+#addPost_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#addPost_form button {
+  margin-left: 10px;
+  background-color: #ac5656;
   color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#addPost_form button:hover {
+  background-color: #c8c8c8;
+  color: black;
 }

@@ -1,4 +1,22 @@
-body {
-  background-color: rgb(237, 150, 150);
-  color: white;
+#addPost_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    margin-left: 10px;
+    background-color: rgb(172, 86, 86);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: rgb(200, 200, 200);
+      color: rgb(0, 0, 0);
+    }
+  }
 }

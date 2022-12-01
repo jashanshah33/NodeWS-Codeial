@@ -1,59 +1,56 @@
 .outer_header_form_container {
-  height: 95vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
+    border-radius: 5%;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+  label {
+    align-self: flex-start;
+    font-size: 1.1rem;
+  }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 60%;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
-  border-radius: 5%;
-}
- div {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.5rem;
+  input {
+    border: 2px solid rgb(197, 197, 197);
+    height: 1.3rem;
+    width: 13rem;
+  }
 
-}
- label {
-  align-self: flex-start;
-  font-size: 1.1rem;
-}
+  button {
+    background-color: rgb(72, 72, 225);
+    padding: 8px 18px;
+    color: white;
+    border: none;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
 
-input {
-  border: 2px solid rgb(197, 197, 197);
-  height: 1.3rem;
-  width: 13rem;
-}
+  button:hover {
+    background-color: rgb(186, 186, 186);
+    color: black;
+  }
+  #login_btn {
+    background-color: rgb(136, 73, 243);
+  }
 
-button {
-  background-color: rgb(72, 72, 225);
-  padding: 8px 18px;
-  color: white;
-  border: none;
-  transition: all 0.4s;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-button:hover {
-  background-color: rgb(186, 186, 186);
-  color: black;
-}
-#login_btn {
-  background-color: rgb(136, 73, 243);
-}
-
-#login_btn:hover {
-  background-color: rgb(186, 186, 186);
-  color: black;
-}
-
+  #login_btn:hover {
+    background-color: rgb(186, 186, 186);
+    color: black;
+  }
 }
