@@ -56,7 +56,7 @@ module.exports.createUser = function (req, res) {
 };
 
 module.exports.createUserSession = function (req, res) {
-  return res.redirect("/users/profile");
+  return res.redirect("/");
 };
 
 module.exports.destroyUserSession = function (req, res) {

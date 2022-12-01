@@ -20,3 +20,38 @@
   background-color: #c8c8c8;
   color: black;
 }
+
+.posts_Conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.posts_Conatiner .single_post_container {
+  box-sizing: border-box;
+  margin-top: 20px;
+  width: 40%;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
+  border-radius: 5%;
+  text-align: start;
+  padding: 8px 10px;
+}
+
+.posts_Conatiner h4 {
+  margin: 0;
+}
+
+.posts_Conatiner p {
+  margin: 5px 0;
+}
+
+.posts_Conatiner .post_img_container {
+  display: flex;
+  height: 20px;
+  width: 60px;
+}
+
+.posts_Conatiner .comment_icon {
+  margin-left: 15px;
+}
