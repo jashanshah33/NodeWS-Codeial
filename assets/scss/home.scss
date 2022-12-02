@@ -32,7 +32,7 @@
     margin-top: 20px;
     width: 40%;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
-    border-radius: 5%;
+    border-radius: 10px;
     text-align: start;
     padding: 8px 10px;
   }
@@ -51,5 +51,48 @@
 
   .comment_icon {
     margin-left: 15px;
+  }
+}
+
+.comment_form_container {
+  margin-top: 10px;
+
+  input {
+    width: 65%;
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 4px;
+    height: 1.3rem;
+  }
+  button {
+    box-sizing: border-box;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(58, 58, 180);
+    transition: all 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(186, 186, 186);
+      color: black;
+    }
+  }
+}
+.comments_header {
+  margin: 0 0 8px 0;
+}
+.diplayed_comment {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0 0 0 5px;
+  }
+  h4 {
+    padding: 0;
+    margin: 0;
   }
 }

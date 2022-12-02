@@ -9,6 +9,7 @@
       name="content"
       cols="30"
       rows="3"
+      required
     ></textarea>
     <button type="submit">Post</button>
   </form>
@@ -37,6 +38,21 @@
         height="100%"
       />
       <p>5</p>
+    </div>
+    <div class="comment_form_container">
+      <form action="/comments/createComment" method="post">
+        <input name="comment" width="100%" type="text" required />
+        <input name="post" value="<%-i._id%>" type="hidden" required />
+
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
+    <hr />
+    <h3 class="comments_header">Comments:-</h3>
+    <div class="diplayed_comment">
+      <h4>Jashan:</h4>
+      <p>Wow</p>
     </div>
   </div>
 
