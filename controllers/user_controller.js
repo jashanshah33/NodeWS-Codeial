@@ -70,3 +70,13 @@ module.exports.destroyUserSession = function (req, res) {
     return res.redirect("/users/login");
   });
 };
+
+module.exports.updateUser = function (req, res) {
+  if (req.user.id == req.query.id) {
+    User.findByIdAndUpdate(req.query.id, req.body, function (err, user) {
+      return res.redirect("back");
+    });
+  } else {
+    return res.status(401).send("Unauthorize");
+  }
+};

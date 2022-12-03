@@ -17,5 +17,5 @@ router.post(
 );
 
 router.get("/logout", userController.destroyUserSession);
-
+router.post("/update", passport.checkAuthentication, userController.updateUser);
 module.exports = router;

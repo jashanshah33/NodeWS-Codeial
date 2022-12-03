@@ -98,7 +98,7 @@
   <aside class="friends_list_container">
     <h3>Friends</h3>
     <ul>
-      <% for(let i of user){%>
+      <% for(let i of allUsers){%>
       <li><a href="/users/profile?id=<%-i._id%>"><%-i.name%></a></li>
       <%}%>
     </ul>

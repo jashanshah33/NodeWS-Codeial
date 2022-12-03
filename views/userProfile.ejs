@@ -10,5 +10,29 @@
     </div>
     <div class="name"><%=profileUser.name%></div>
     <div class="email"><%=profileUser.email%></div>
+
+    <% if(user.id == profileUser.id) {%>
+    <div class="btn_container">
+      <button id="profile_edit_btn">Edit</button>
+    </div>
+    <%}%>
+    <form
+      id="profile_edit_form"
+      action="/users/update?id=<%-profileUser.id%>"
+      method="post"
+    >
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
+
+  <script src="/js/userProfile.js"></script>
 </div>

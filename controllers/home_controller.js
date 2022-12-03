@@ -15,7 +15,7 @@ module.exports.home = function (req, res) {
         return res.render("home", {
           title: "Home",
           posts: post,
-          user: user
+          allUsers: user
         });
       });
     });

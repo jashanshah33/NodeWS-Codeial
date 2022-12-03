@@ -2,7 +2,9 @@
 
 <nav id="nav">
   <div class="logo">
-    <a href="/"> <h3>Codeial</h3> </a>
+    <a href="/">
+      <h3>Codeial</h3>
+    </a>
   </div>
   <div class="list_container">
     <ul>
@@ -12,12 +14,14 @@
 
       <% if(locals.user) {%>
       <li>
-        <a href="/users/profile?id=<%-locals.user.id%>"> Profile</a>
+        <a href="/users/profile?id=<%-user.id%>"> Profile</a>
       </li>
       <li>
         <a href="/users/logout"> Logout</a>
       </li>
-      <li><%-user.name%></li>
+      <li>
+        <a href="/users/profile?id=<%-user.id%>"> <%-user.name%></a>
+      </li>
       <%}else{ %>
       <li>
         <a href="/users/login"> Login</a>
