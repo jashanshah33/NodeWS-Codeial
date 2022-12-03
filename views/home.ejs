@@ -1,89 +1,106 @@
 <link rel="stylesheet" href="/css/home.css" />
 
-<section>
-  <% if(locals.user) {%>
+<div id="home_page_full_container">
+  <main>
+    <section>
+      <% if(locals.user) {%>
 
-  <form id="addPost_form" action="/posts/create" method="post">
-    <textarea
-      placeholder="Type here..."
-      name="content"
-      cols="30"
-      rows="3"
-      required
-    ></textarea>
-    <button type="submit">Post</button>
-  </form>
-  <%} %>
-</section>
-<section class="posts_Conatiner">
-  <% for(let i of posts){%>
-  <div class="single_post_container">
-    <h4><%-i.user.name %></h4>
-
-    <% if(locals.user && locals.user.id == i.user.id){%>
-    <div class="Post_delete_btn">
-      <a href="/posts/destroy?id=<%-i._id%>">
-        <img
-          width="100%"
-          height="100%"
-          src="https://cdn-icons-png.flaticon.com/512/484/484611.png"
-          alt=""
-        />
-      </a>
-    </div>
-    <%}%>
-
-    <hr />
-    <p><%-i.content %></p>
-    <hr />
-    <div class="post_img_container">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
-        alt=""
-        width="100%"
-        height="100%"
-      />
-      <p>10</p>
-      <img
-        class="comment_icon"
-        src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
-        alt=""
-        width="100%"
-        height="100%"
-      />
-      <p><%-i.comments.length%></p>
-    </div>
-    <div class="comment_form_container">
-      <form action="/comments/createComment" method="post">
-        <input name="comment" width="100%" type="text" required />
-        <input name="post" value="<%-i._id%>" type="hidden" required />
-
-        <button type="submit">Add</button>
+      <form id="addPost_form" action="/posts/create" method="post">
+        <textarea
+          placeholder="Type here..."
+          name="content"
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+        <button type="submit">Post</button>
       </form>
-    </div>
+      <%} %>
+    </section>
+    <section class="posts_Conatiner">
+      <% for(let i of posts){%>
+      <div class="single_post_container">
+        <a href="/users/profile?id=<%-i.user._id%>">
+          <h4><%-i.user.name %></h4>
+        </a>
 
-    <hr />
-    <h3 class="comments_header">Comments:-</h3>
-    <% for(let comment of i.comments){%>
-    <div class="diplayed_comment">
-      <h4><%-comment.user.name%>:</h4>
-      <p><%-comment.comment%></p>
-      <% if(locals.user && locals.user.id == comment.user.id || locals.user.id
-      == i.user.id){%>
-      <div class="comment_delete_container">
-        <a href="/comments/destroy?id=<%-comment._id%>">
+        <% if(locals.user && locals.user.id == i.user.id){%>
+        <div class="Post_delete_btn">
+          <a href="/posts/destroy?id=<%-i._id%>">
+            <img
+              width="100%"
+              height="100%"
+              src="https://cdn-icons-png.flaticon.com/512/484/484611.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <%}%>
+
+        <hr />
+        <p><%-i.content %></p>
+        <hr />
+        <div class="post_img_container">
           <img
+            src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
+            alt=""
             width="100%"
             height="100%"
-            src="https://cdn-icons-png.flaticon.com/512/2976/2976286.png"
-            alt=""
           />
-        </a>
-      </div>
-      <%}%>
-    </div>
-    <%}%>
-  </div>
+          <p>10</p>
+          <img
+            class="comment_icon"
+            src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
+            alt=""
+            width="100%"
+            height="100%"
+          />
+          <p><%-i.comments.length%></p>
+        </div>
+        <div class="comment_form_container">
+          <form action="/comments/createComment" method="post">
+            <input name="comment" width="100%" type="text" required />
+            <input name="post" value="<%-i._id%>" type="hidden" required />
 
-  <%}%>
-</section>
+            <button type="submit">Add</button>
+          </form>
+        </div>
+
+        <hr />
+        <h3 class="comments_header">Comments:-</h3>
+        <% for(let comment of i.comments){%>
+        <div class="diplayed_comment">
+          <a href="/users/profile?id=<%-comment.user._id%>">
+            <h4><%-comment.user.name%>:</h4>
+          </a>
+
+          <p><%-comment.comment%></p>
+          <% if(locals.user && locals.user.id == comment.user.id || locals.user
+          && locals.user.id == i.user.id){%>
+          <div class="comment_delete_container">
+            <a href="/comments/destroy?id=<%-comment._id%>">
+              <img
+                width="100%"
+                height="100%"
+                src="https://cdn-icons-png.flaticon.com/512/2976/2976286.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <%}%>
+        </div>
+        <%}%>
+      </div>
+
+      <%}%>
+    </section>
+  </main>
+  <aside class="friends_list_container">
+    <h3>Friends</h3>
+    <ul>
+      <% for(let i of user){%>
+      <li><a href="/users/profile?id=<%-i._id%>"><%-i.name%></a></li>
+      <%}%>
+    </ul>
+  </aside>
+</div>
