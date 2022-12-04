@@ -5,7 +5,6 @@ const passport = require("passport");
 const userController = require("../controllers/user_controller");
 
 router.get("/profile", passport.checkAuthentication, userController.profile);
-router.get("/friends", userController.friends);
 router.get("/signup", userController.signup);
 router.get("/login", userController.login);
 router.post("/create", userController.createUser);

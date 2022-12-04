@@ -1,18 +1,23 @@
 const User = require("../models/user");
 
-module.exports.profile = function (req, res) {
-  User.findById(req.query.id, function (err, user) {
+module.exports.profile = async function (req, res) {
+  // User.findById(req.query.id, function (err, user) {
+  //   return res.render("userProfile", {
+  //     title: "Profile",
+  //     profileUser: user,
+  //   });
+  // });
+
+  try {
+    const user = await User.findById(req.query.id);
     return res.render("userProfile", {
       title: "Profile",
       profileUser: user,
     });
-  });
-};
-
-module.exports.friends = function (req, res) {
-  return res.render("userFriends", {
-    title: "Friends",
-  });
+  } catch (error) {
+    console.log("Error", error);
+    return;
+  }
 };
 
 module.exports.signup = function (req, res) {
@@ -33,29 +38,42 @@ module.exports.login = function (req, res) {
   });
 };
 
-module.exports.createUser = function (req, res) {
+module.exports.createUser = async function (req, res) {
   console.log(req.body);
   if (req.body.password != req.body.confirmPassword) {
     console.log("Password and confirmPassword is't matching");
     return res.redirect("back");
   }
 
-  User.findOne({ email: req.body.email }, function (err, user) {
-    if (err) {
-      console.log("Error while finding user");
-      return res.redirect("/users/signup");
-    }
+  // User.findOne({ email: req.body.email }, function (err, user) {
+  //   if (err) {
+  //     console.log("Error while finding user");
+  //     return res.redirect("/users/signup");
+  //   }
+  //   if (!user) {
+  //     User.create(req.body, function (err, user) {
+  //       if (err) {
+  //         console.log("Error while creating user in signup");
+  //         return res.redirect("/users/signup");
+  //       }
+  //     });
+  //     return res.redirect("/users/login");
+  //   }
+  //   return res.redirect("back");
+  // });
+
+  try {
+    const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      User.create(req.body, function (err, user) {
-        if (err) {
-          console.log("Error while creating user in signup");
-          return res.redirect("/users/signup");
-        }
-      });
+      await User.create(req.body);
       return res.redirect("/users/login");
+    } else {
+      return res.redirect("back");
     }
-    return res.redirect("back");
-  });
+  } catch (error) {
+    console.log("Error", error);
+    return;
+  }
 };
 
 module.exports.createUserSession = function (req, res) {
@@ -71,11 +89,14 @@ module.exports.destroyUserSession = function (req, res) {
   });
 };
 
-module.exports.updateUser = function (req, res) {
+module.exports.updateUser = async function (req, res) {
   if (req.user.id == req.query.id) {
-    User.findByIdAndUpdate(req.query.id, req.body, function (err, user) {
-      return res.redirect("back");
-    });
+    // User.findByIdAndUpdate(req.query.id, req.body, function (err, user) {
+    //   return res.redirect("back");
+    // });
+
+    await User.findByIdAndUpdate(req.query.id, req.body);
+    return res.redirect("back");
   } else {
     return res.status(401).send("Unauthorize");
   }
