@@ -32,7 +32,7 @@ module.exports.home = async function (req, res) {
       allUsers: users,
     });
   } catch (error) {
-    console.log("Error", error);
+    req.flash('error', error)
     return;
   }
 };

@@ -18,81 +18,9 @@
       <%} %>
     </section>
     <section class="posts_Conatiner">
-      <% for(let i of posts){%>
-      <div class="single_post_container">
-        <a href="/users/profile?id=<%-i.user._id%>">
-          <h4><%-i.user.name %></h4>
-        </a>
+      <!-- _post partials added -->
+        <%- include("./__post") %>
 
-        <% if(locals.user && locals.user.id == i.user.id){%>
-        <div class="Post_delete_btn">
-          <a href="/posts/destroy?id=<%-i._id%>">
-            <img
-              width="100%"
-              height="100%"
-              src="https://cdn-icons-png.flaticon.com/512/484/484611.png"
-              alt=""
-            />
-          </a>
-        </div>
-        <%}%>
-
-        <hr />
-        <p><%-i.content %></p>
-        <hr />
-        <div class="post_img_container">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
-            alt=""
-            width="100%"
-            height="100%"
-          />
-          <p>10</p>
-          <img
-            class="comment_icon"
-            src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
-            alt=""
-            width="100%"
-            height="100%"
-          />
-          <p><%-i.comments.length%></p>
-        </div>
-        <div class="comment_form_container">
-          <form action="/comments/createComment" method="post">
-            <input name="comment" width="100%" type="text" required />
-            <input name="post" value="<%-i._id%>" type="hidden" required />
-
-            <button type="submit">Add</button>
-          </form>
-        </div>
-
-        <hr />
-        <h3 class="comments_header">Comments:-</h3>
-        <% for(let comment of i.comments){%>
-        <div class="diplayed_comment">
-          <a href="/users/profile?id=<%-comment.user._id%>">
-            <h4><%-comment.user.name%>:</h4>
-          </a>
-
-          <p><%-comment.comment%></p>
-          <% if(locals.user && locals.user.id == comment.user.id || locals.user
-          && locals.user.id == i.user.id){%>
-          <div class="comment_delete_container">
-            <a href="/comments/destroy?id=<%-comment._id%>">
-              <img
-                width="100%"
-                height="100%"
-                src="https://cdn-icons-png.flaticon.com/512/2976/2976286.png"
-                alt=""
-              />
-            </a>
-          </div>
-          <%}%>
-        </div>
-        <%}%>
-      </div>
-
-      <%}%>
     </section>
   </main>
   <aside class="friends_list_container">

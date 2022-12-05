@@ -18,14 +18,16 @@ module.exports.createPost = async function (req, res) {
   // );
 
   try {
-   await Post.create({
+    await Post.create({
       content: req.body.content,
       user: req.user._id,
     });
 
+    req.flash("success", "Post Successfully Published!");
+
     return res.redirect("back");
   } catch (error) {
-    console.log("Error", error);
+    req.flash("error", error);
     return;
   }
 };
@@ -47,12 +49,16 @@ module.exports.destroyPost = async function (req, res) {
     if (post.user == req.user.id) {
       post.remove();
       await Comment.deleteMany({ post: req.query.id });
+      req.flash("success", "Post Deleted Successfully");
+
       return res.redirect("back");
     } else {
+      req.flash("error", "You can't Deleted a post");
+
       return res.redirect("back");
     }
   } catch (error) {
-    console.log("Error", error);
+    req.flash("error", error);
     return;
   }
 };
