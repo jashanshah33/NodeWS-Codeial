@@ -21,8 +21,12 @@ module.exports.home = async function (req, res) {
   //using async await
   try {
     let posts = await Post.find({})
+      .sort("-createdAt")
       .populate("user")
       .populate({ path: "comments", populate: { path: "user" } });
+    for (const p of posts) {
+      p.comments.reverse();
+    }
 
     let users = await User.find({});
 
@@ -32,7 +36,7 @@ module.exports.home = async function (req, res) {
       allUsers: users,
     });
   } catch (error) {
-    req.flash('error', error)
+    req.flash("error", error);
     return;
   }
 };
