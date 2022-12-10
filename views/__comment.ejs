@@ -1,5 +1,5 @@
 <% for( comment of i.comments){%>
-<div class="diplayed_comment">
+<div class="diplayed_comment" id="comment-<%= comment._id%>">
   <a href="/users/profile?id=<%=comment.user._id%>">
     <h4><%=comment.user.name%>:</h4>
   </a>

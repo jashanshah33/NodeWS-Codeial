@@ -51,8 +51,6 @@ module.exports.createComment = async function (req, res) {
         });
       }
 
-      req.flash("success", "Comment Added Successfully");
-
       return res.redirect("back");
     }
   } catch (error) {
@@ -101,7 +99,6 @@ module.exports.destroyComment = async function (req, res) {
           message: "Comment Deleted!",
         });
       }
-      req.flash("success", "Comment Deleted Successfully");
       return res.redirect("back");
     } else {
       req.flash("error", "You can not delete a comment");

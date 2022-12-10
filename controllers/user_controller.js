@@ -1,4 +1,6 @@
 const User = require("../models/user");
+const fs = require("fs");
+const path = require("path");
 
 module.exports.profile = async function (req, res) {
   // User.findById(req.query.id, function (err, user) {
@@ -97,12 +99,34 @@ module.exports.updateUser = async function (req, res) {
     // User.findByIdAndUpdate(req.query.id, req.body, function (err, user) {
     //   return res.redirect("back");
     // });
+    try {
+      let user = await User.findById(req.query.id);
 
-    await User.findByIdAndUpdate(req.query.id, req.body);
-    req.flash("success", "User Details Updated Successfully");
+      User.uploadedAvatar(req, res, function (err) {
+        if (err) {
+          console.log("*******Multer Error", err);
+        }
 
-    return res.redirect("back");
+        user.name = req.body.name;
+        user.email = req.body.email;
+        if (req.file) {
+          if (user.avatar) {
+            if (fs.existsSync(path.join(__dirname, "..", user.avatar))) {
+              fs.unlinkSync(path.join(__dirname, "..", user.avatar));
+            }
+          }
+          user.avatar = User.avatarPath + "/" + req.file.filename;
+        }
+        user.save();
+        req.flash("success", "Profile Updated Successfully");
+        return res.redirect("back");
+      });
+    } catch (error) {
+      req.flash("error", error);
+      return res.redirect("back");
+    }
   } else {
+    req.flash("error", "Unauthorize!");
     return res.status(401).send("Unauthorize");
   }
 };

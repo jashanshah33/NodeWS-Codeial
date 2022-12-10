@@ -1,30 +1,57 @@
-{
-  const createComment = function () {
-    let newCommentForm = $("#add_comment_form");
+// Let's implement this via classes
 
-    newCommentForm.submit(function (e) {
+// this class would be initialized for every post on the page
+// 1. When the page loads
+// 2. Creation of every post dynamically via AJAX
+
+class PostComments {
+  // constructor is used to initialize the instance of the class whenever a new instance is created
+  constructor(postId) {
+    this.postId = postId;
+    this.postContainer = $(`#post-${postId}`);
+    this.newCommentForm = $(`#post-${postId}-comments-form`);
+
+    this.createComment(postId);
+
+    let self = this;
+    // call for all the existing comments
+    $(" .comment_delete_link", this.postContainer).each(function () {
+      self.deleteComment($(this));
+    });
+  }
+
+  createComment(postId) {
+    let pSelf = this;
+    this.newCommentForm.submit(function (e) {
       e.preventDefault();
+      let self = this;
 
       $.ajax({
         type: "post",
         url: "/comments/createComment",
-        data: newCommentForm.serialize(),
+        data: $(self).serialize(),
         success: function (data) {
           let comment = data.data.comment;
-          console.log(comment);
+          const newComment = pSelf.createcommmentDom(comment);
+          $(`#post-comments-${postId}`).prepend(newComment);
+          pSelf.deletePost($(" .comment_delete_link", newComment));
 
-          const newComment = createNewComment(comment);
-          $("#Comments_outer_container").prepend(newComment);
-          deletePost($(" .comment_delete_link", newComment));
+          new Noty({
+            theme: "relax",
+            text: "Comment published!",
+            type: "success",
+            layout: "topRight",
+            timeout: 1500,
+          }).show();
         },
         error: function (err) {
           console.log(err.responseText);
         },
       });
     });
-  };
+  }
 
-  const createNewComment = function (comment) {
+  createcommmentDom(comment) {
     return $(`<div  id="comment-${comment._id}"  class="diplayed_comment">
     <a href="/users/profile?id=${comment.user._id}">
       <h4>${comment.user.name}:</h4>
@@ -32,7 +59,7 @@
   
     <p>${comment.comment}</p>
 
-    <div class="comment_delete_container">
+    <div class="comment_delete_container" id="comment-${comment._id}">
       <a class="comment_delete_link" href="/comments/destroy?id=${comment._id}">
         <img
           width="100%"
@@ -44,12 +71,11 @@
     </div>
 
     </div>`);
-  };
+  }
 
-  const deletePost = function (deleteLink) {
+  deletePost(deleteLink) {
     $(deleteLink).click(function (e) {
       e.preventDefault();
-      console.log("workong");
 
       $.ajax({
         type: "get",
@@ -57,13 +83,19 @@
         success: function (data) {
           console.log(data);
           $(`#comment-${data.data.comment_id}`).remove();
+
+          new Noty({
+            theme: "relax",
+            text: "Comment Deleted",
+            type: "success",
+            layout: "topRight",
+            timeout: 1500,
+          }).show();
         },
         error: function (err) {
           console.log(err.responseText);
         },
       });
     });
-  };
-
-  createComment();
+  }
 }

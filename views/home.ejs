@@ -7,6 +7,7 @@
 
       <form id="addPost_form" action="/posts/create" method="post">
         <textarea
+          id="post_textarea"
           placeholder="Type here..."
           name="content"
           cols="30"
@@ -17,17 +18,17 @@
       </form>
       <%} %>
     </section>
+
     <section id="post_list_container" class="posts_Conatiner">
       <!-- _post partials added -->
-        <%- include("./__post") %>
-
+      <%- include("./__post") %>
     </section>
   </main>
   <aside class="friends_list_container">
     <h3>Friends</h3>
     <ul>
       <% for(let i of allUsers){%>
-      <li><a href="/users/profile?id=<%-i._id%>"><%-i.name%></a></li>
+      <li><a href="/users/profile?id=<%=i._id%>"><%=i.name%></a></li>
       <%}%>
     </ul>
   </aside>

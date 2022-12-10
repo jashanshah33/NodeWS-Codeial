@@ -9,22 +9,24 @@ const passport = require("passport");
 const passportLocal = require("./config/passport-local-strategy");
 // const MongoStore = require("connect-mongo")(session); did't work
 const MongoStore = require("connect-mongo");
-const sassMiddleware = require('node-sass-middleware')
-const flash = require('connect-flash')
-const custonMware = require('./config/middleware')
+const sassMiddleware = require("node-sass-middleware");
+const flash = require("connect-flash");
+const custonMware = require("./config/middleware");
 
-app.use(sassMiddleware({
-  src: './assets/scss/',
-  dest: './assets/css',
-  debug: true,
-  outputStyle:'expanded',
-  prefix:'/css'
-}))
+app.use(
+  sassMiddleware({
+    src: "./assets/scss/",
+    dest: "./assets/css",
+    debug: true,
+    outputStyle: "expanded",
+    prefix: "/css",
+  })
+);
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static("assets"));
+app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(expressLayouts);
-
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
 
@@ -56,8 +58,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
-app.use(flash())
-app.use(custonMware.setFlash)
+app.use(flash());
+app.use(custonMware.setFlash);
 
 app.use("/", require("./routes"));
 

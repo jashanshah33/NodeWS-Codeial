@@ -13,6 +13,7 @@
           const post = data.data.post;
           // console.log("data", post);
           let newPost = createNewPost(post);
+          //$("#post_textarea").val("");
 
           $("#post_list_container").prepend(newPost);
           new Noty({
@@ -25,7 +26,7 @@
 
           deletePost($(" .Post_delete_btn_link", newPost));
           // call the create comment class
-          //new PostComments(data.data.post._id);
+          new PostComments(data.data.post._id);
         },
         error: function (err) {
           console.log(err.responseText);
@@ -35,7 +36,7 @@
   };
 
   let createNewPost = function (post) {
-    return $(`<div id="post-${post._id}" class="single_post_container">
+    return $(`<div class="single_post_container" id="post-${post._id}" >
       <a href="/users/profile?id=${post._id}">
         <h4>${post.user.name}</h4>
       </a>
@@ -72,7 +73,7 @@
         <p>${post.comments.length}</p>
       </div>
       <div class="comment_form_container">
-        <form action="/comments/createComment" method="post">
+        <form id='post-${post._id}-comments-form' action="/comments/createComment" method="post">
           <input name="comment" width="100%" type="text" required />
           <input name="post" value="${post._id}" type="hidden" required />
 
@@ -119,14 +120,14 @@
   let convertPostsToAjax = function () {
     $("#post_list_container>div").each(function () {
       let self = $(this);
-      console.log(self);
-      let deleteButton = ($(" .Post_delete_btn_link", self));
+      console.log(self.prop("id").split("-")[1]);
+      let deleteButton = $(" .Post_delete_btn_link", self);
 
       deletePost(deleteButton);
 
       // get the post's id by splitting the id attribute
-      // let postId = self.prop('id').split("-")[1]
-      // new PostComments(postId);
+      let postId = self.prop("id").split("-")[1];
+      //new PostComments(postId);
     });
   };
 

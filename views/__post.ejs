@@ -39,7 +39,7 @@
     <p><%=i.comments.length%></p>
   </div>
   <div class="comment_form_container">
-    <form id="add_comment_form" action="/comments/createComment" method="post">
+    <form id="post-<%= i._id%>-comments-form" action="/comments/createComment" method="post">
       <input name="comment" width="100%" type="text" required />
       <input name="post" value="<%=i._id%>" type="hidden" required />
 
@@ -51,7 +51,11 @@
   <h3 id="comments_header">Comments:-</h3>
   <!-- _comment partials added -->
   <div class="Comments_outer_container">
-    <div id="post-comments-<%= i._id %>"><%- include('./__comment') %></div>
+    <div id="post-comments-<%= i._id %>">
+      
+      <%- include('./__comment') %>
+    
+    </div>
   </div>
 </div>
 

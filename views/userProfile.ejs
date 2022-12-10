@@ -3,10 +3,19 @@
 <div class="outer_container">
   <div class="profile_container">
     <div class="img">
-      <img
+      <!-- <img
         src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
         alt=""
+      /> -->
+
+      <% if (profileUser.avatar) { %>
+      <img src="<%= user.avatar%>" alt="<%= user.name%>" />
+      <%} else { %>
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
+        alt="<%= user.name%>"
       />
+      <% } %>
     </div>
     <div class="name"><%=profileUser.name%></div>
     <div class="email"><%=profileUser.email%></div>
@@ -20,7 +29,12 @@
       id="profile_edit_form"
       action="/users/update?id=<%-profileUser.id%>"
       method="post"
+      enctype="multipart/form-data"
     >
+      <div>
+        <label for="avator">Profile Picture</label>
+        <input id="avator" type="file" name="avatar" />
+      </div>
       <div>
         <label for="name">Name</label>
         <input id="name" type="text" name="name" required />
