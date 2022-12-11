@@ -47,6 +47,13 @@
   border: none;
   border-radius: 5px;
   padding: 8px 15px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.btn_container button:hover {
+  background-color: #b8b8b8;
+  color: black;
 }
 
 #profile_edit_form {
@@ -74,6 +81,13 @@
   border-radius: 5px;
   padding: 8px 15px;
   margin: 10px 0;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+#profile_edit_form button:hover {
+  background-color: #b8b8b8;
+  color: black;
 }
 
 #preview_container {
