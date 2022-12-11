@@ -109,6 +109,7 @@ module.exports.updateUser = async function (req, res) {
 
         user.name = req.body.name;
         user.email = req.body.email;
+
         if (req.file) {
           if (user.avatar) {
             if (fs.existsSync(path.join(__dirname, "..", user.avatar))) {

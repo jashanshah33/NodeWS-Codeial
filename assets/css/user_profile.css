@@ -15,6 +15,7 @@
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
   border-radius: 5%;
   padding: 20px 0;
+  position: relative;
 }
 
 .profile_container div {
@@ -73,4 +74,33 @@
   border-radius: 5px;
   padding: 8px 15px;
   margin: 10px 0;
+}
+
+#preview_container {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+
+#preview_container div {
+  width: 50%;
+  height: 50%;
+}
+
+#preview_container button {
+  margin-top: 2rem;
+  align-self: end;
+}
+
+#preview_container img {
+  width: 100%;
+  height: 100%;
 }
