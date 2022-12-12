@@ -12,7 +12,7 @@ module.exports.createUserSession = async function (req, res) {
     }
     return res.json(200, {
       message: "Sucessfully logged in, keep your token safe",
-      token: jwt.sign(user.toJSON(), "Jashan", { expiresIn: "10000" }),
+      token: jwt.sign(user.toJSON(), "Jashan", { expiresIn: "1000000" }),
     });
   } catch (error) {
     console.log("********", error);
