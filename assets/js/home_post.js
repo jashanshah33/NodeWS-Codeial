@@ -120,14 +120,14 @@
   let convertPostsToAjax = function () {
     $("#post_list_container>div").each(function () {
       let self = $(this);
-      console.log(self.prop("id").split("-")[1]);
+      //console.log(self.prop("id").split("-")[1]);
       let deleteButton = $(" .Post_delete_btn_link", self);
 
       deletePost(deleteButton);
 
       // get the post's id by splitting the id attribute
       let postId = self.prop("id").split("-")[1];
-      new PostComments(postId);
+      //new PostComments(postId);
     });
   };
 
