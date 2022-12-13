@@ -1,18 +1,21 @@
 <link rel="stylesheet" href="/css/login_signup.css" />
 
 <div class="outer_header_form_container">
-<form action="/users/create_session" method="post">
-  <div>
-    <label for="login_email">Email</label>
-    <input id="login_email" name="email" type="email" required />
-  </div>
-  <div>
-    <label for="login_password">Password</label>
-    <input id="login_password" name="password" type="password" required />
-  </div>
+  <form action="/users/create_session" method="post">
+    <div>
+      <label for="login_email">Email</label>
+      <input id="login_email" name="email" type="email" required />
+    </div>
+    <div>
+      <label for="login_password">Password</label>
+      <input id="login_password" name="password" type="password" required />
+    </div>
 
+    <div>
+      <button id="login_btn" type="submit">Login</button>
+    </div>
+  </form>
   <div>
-    <button id="login_btn" type="submit">Login</button>
+    <a href="/users/auth/google">Google login</a>
   </div>
-</form>
 </div>
