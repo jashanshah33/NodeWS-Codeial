@@ -54,3 +54,20 @@
     color: black;
   }
 }
+#google_btn {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    background-color: rgb(152, 100, 2);
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.4s;
+    &:hover {
+      background-color: rgb(184, 184, 184);
+      color: black;
+    }
+  }
+}
