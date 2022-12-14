@@ -47,6 +47,8 @@ module.exports.createComment = async function (req, res) {
       post.save();
 
       if (req.xhr) {
+        
+        // comment = await comment.populate("user", "name, email").execPopulate();
         comment.user = req.user;
         return res.status(200).json({
           data: {
