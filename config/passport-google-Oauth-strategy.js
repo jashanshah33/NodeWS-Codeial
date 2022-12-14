@@ -19,9 +19,9 @@ passport.use(
         if (err) {
           return console.log("Error in google strategy-passport");
         }
-        console.log(profile);
+        //console.log(profile);
         if (user) {
-         return done(null, user);
+          return done(null, user);
         } else {
           User.create(
             {
@@ -33,7 +33,7 @@ passport.use(
               if (err) {
                 return console.log("Error creating User by google passport");
               }
-             return done(null, user);
+              return done(null, user);
             }
           );
         }

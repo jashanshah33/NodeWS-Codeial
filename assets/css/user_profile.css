@@ -11,11 +11,12 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 90%;
+  min-height: 90%;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
   border-radius: 5%;
-  padding: 20px 0;
+  padding: 10px 0;
   position: relative;
+  margin-top: 30px;
 }
 
 .profile_container div {

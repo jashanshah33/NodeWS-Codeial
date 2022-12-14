@@ -9,9 +9,10 @@
       /> -->
 
       <% if (profileUser.avatar) { %>
-      <img src="<%= user.avatar%>" alt="<%= user.name%>" />
+      <img width="100%" src="<%= user.avatar%>" alt="<%= user.name%>" />
       <%} else { %>
       <img
+        width="100%"
         src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
         alt="<%= user.name%>"
       />

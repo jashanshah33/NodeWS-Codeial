@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: "shah.boparai.3@gmail",
-    pass: "Jattboys3",
+    user: "webdeveloperpb18@gmail.com",
+    pass: "olcwnklsgytumcln",
   },
 });
 
@@ -29,3 +29,8 @@ let renderTemplate = (data, relativePath) => {
 
   return mailHTML;
 };
+
+module.exports={
+  transporter: transporter,
+  renderTemplate : renderTemplate
+}
