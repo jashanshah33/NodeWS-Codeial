@@ -44,11 +44,23 @@
       </div>
       <div>
         <label for="name">Name</label>
-        <input id="name" type="text" name="name" required />
+        <input
+          value="<%=profileUser.name%>"
+          id="name"
+          type="text"
+          name="name"
+          required
+        />
       </div>
       <div>
         <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
+        <input
+          value="<%=profileUser.email%>"
+          id="email"
+          type="email"
+          name="email"
+          required
+        />
       </div>
 
       <button type="submit">Submit</button>

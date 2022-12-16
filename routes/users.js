@@ -28,4 +28,7 @@ router.get(
   userController.createUserSession
 );
 
+router.get("/forgetPassword", userController.forgotPassowrd);
+router.post("/resetPassword", userController.resetPassword);
+
 module.exports = router;

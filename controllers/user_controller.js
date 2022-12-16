@@ -1,6 +1,10 @@
 const User = require("../models/user");
 const fs = require("fs");
 const path = require("path");
+const ForgetPassword = require("../models/forgotPassword");
+const crypto = require("crypto");
+const queue = require("../config/kue");
+const forgotPasswordEmailWorker = require("../workers/forgot_password_worker");
 
 module.exports.profile = async function (req, res) {
   // User.findById(req.query.id, function (err, user) {
@@ -129,5 +133,96 @@ module.exports.updateUser = async function (req, res) {
   } else {
     req.flash("error", "Unauthorize!");
     return res.status(401).send("Unauthorize");
+  }
+};
+
+module.exports.forgotPassowrd = async function (req, res) {
+  try {
+    return res.render("userForgotPassoword", {
+      title: "ForgetPassword",
+    });
+  } catch (error) {
+    req.flash("error", error);
+    return res.redirect("back");
+  }
+};
+
+//Reset User Password
+
+module.exports.resetPassword = async function (req, res) {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    // console.log(user);
+    if (user) {
+      let forgetPasswordUser = await ForgetPassword.findOne({
+        email: req.body.email,
+      });
+
+      if (forgetPasswordUser) {
+        if (forgetPasswordUser.isValid) {
+          req.flash("success", "Please Check you email");
+          return res.redirect("back");
+        } else {
+          await ForgetPassword.findByIdAndUpdate(forgetPasswordUser._id, {
+            accessToken: crypto.randomBytes(20).toString("hex"),
+            isValid: true,
+          });
+
+          forgetPasswordUser = await forgetPasswordUser.populate({
+            path: "user",
+          });
+
+          let job = queue
+            .create("forgotpasswordEmails", forgetPasswordUser)
+            .save(function (err) {
+              if (err) {
+                console.log("error in creating a queue ");
+              }
+
+              console.log("Job enqueue", job.id);
+              console.log(
+                "forgetPasswordUser*******************************",
+                forgetPasswordUser.user.name,
+                forgetPasswordUser.user.email
+              );
+            });
+          return res.render("check_email", {
+            title: "Email",
+          });
+        }
+      } else {
+        let newForgetPasswordUser = await ForgetPassword.create({
+          email: req.body.email,
+          user: user,
+          accessToken: crypto.randomBytes(20).toString("hex"),
+          isValid: true,
+        });
+        newForgetPasswordUser = await newForgetPasswordUser.populate({
+          path: "user",
+        });
+        let job = queue
+          .create("forgotpasswordEmails", newForgetPasswordUser)
+          .save(function (err) {
+            if (err) {
+              console.log("error in creating a queue ");
+            }
+
+            console.log("Job enqueue", job.id);
+            console.log(
+              "newForgetPasswordUser************88",
+              newForgetPasswordUser.user.email
+            );
+          });
+        return res.render("check_email", {
+          title: "Email",
+        });
+      }
+    } else {
+      req.flash("error", "User Not Found");
+      return res.redirect("back");
+    }
+  } catch (error) {
+    req.flash("error", error);
+    return res.redirect("back");
   }
 };
