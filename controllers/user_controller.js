@@ -175,11 +175,7 @@ module.exports.resetPassword = async function (req, res) {
               }
 
               console.log("Job enqueue", job.id);
-              console.log(
-                "forgetPasswordUser*******************************",
-                forgetPasswordUser.user.name,
-                forgetPasswordUser.user.email
-              );
+             
             });
           return res.render("check_email", {
             title: "Email",
@@ -192,25 +188,22 @@ module.exports.resetPassword = async function (req, res) {
             accessToken: crypto.randomBytes(20).toString("hex"),
             isValid: true,
           });
+          let user = await ForgetPassword.findById(forgetPasswordUser._id);
 
-          forgetPasswordUser = await forgetPasswordUser.populate({
+          user = await user.populate({
             path: "user",
           });
 
+
           let job = queue
-            .create("forgotpasswordEmails", forgetPasswordUser)
+            .create("forgotpasswordEmails", user)
             .save(function (err) {
               if (err) {
                 console.log("error in creating a queue ");
               }
-
               console.log("Job enqueue", job.id);
-              console.log(
-                "forgetPasswordUser*******************************",
-                forgetPasswordUser.user.name,
-                forgetPasswordUser.user.email
-              );
             });
+
           return res.render("check_email", {
             title: "Email",
           });
@@ -236,10 +229,7 @@ module.exports.resetPassword = async function (req, res) {
             }
 
             console.log("Job enqueue", job.id);
-            console.log(
-              "newForgetPasswordUser************88",
-              newForgetPasswordUser.user.email
-            );
+          
           });
         return res.render("check_email", {
           title: "Email",
@@ -280,6 +270,8 @@ module.exports.changePassword = async function (req, res) {
       const forgetPasswordUser = await ForgetPassword.findOne({
         accessToken: req.query.accessToken,
       });
+
+      // console.log(forgetPasswordUser);
 
       //  if token is valid
       if (forgetPasswordUser.isValid) {

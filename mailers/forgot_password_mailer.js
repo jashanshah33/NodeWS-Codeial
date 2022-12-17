@@ -20,7 +20,7 @@ exports.forgetPassword = (forgetPasswordUser) => {
         return console.log("Error in sending emails", err);
       }
 
-      console.log(info);
+      // console.log(info);
     }
   );
 };
