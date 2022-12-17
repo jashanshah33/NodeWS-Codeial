@@ -152,17 +152,42 @@ module.exports.forgotPassowrd = async function (req, res) {
 module.exports.resetPassword = async function (req, res) {
   try {
     const user = await User.findOne({ email: req.body.email });
-    // console.log(user);
+
+    //check if user is valid
     if (user) {
       let forgetPasswordUser = await ForgetPassword.findOne({
         email: req.body.email,
       });
 
+      // check if user did password reset in past
       if (forgetPasswordUser) {
+        //if user has valid accessToken
         if (forgetPasswordUser.isValid) {
-          req.flash("success", "Please Check you email");
-          return res.redirect("back");
-        } else {
+          forgetPasswordUser = await forgetPasswordUser.populate({
+            path: "user",
+          });
+
+          let job = queue
+            .create("forgotpasswordEmails", forgetPasswordUser)
+            .save(function (err) {
+              if (err) {
+                console.log("error in creating a queue ");
+              }
+
+              console.log("Job enqueue", job.id);
+              console.log(
+                "forgetPasswordUser*******************************",
+                forgetPasswordUser.user.name,
+                forgetPasswordUser.user.email
+              );
+            });
+          return res.render("check_email", {
+            title: "Email",
+          });
+        }
+
+        //if user has inValid accessToken
+        else {
           await ForgetPassword.findByIdAndUpdate(forgetPasswordUser._id, {
             accessToken: crypto.randomBytes(20).toString("hex"),
             isValid: true,
@@ -190,7 +215,10 @@ module.exports.resetPassword = async function (req, res) {
             title: "Email",
           });
         }
-      } else {
+      }
+
+      //if user forgot his/her password in past
+      else {
         let newForgetPasswordUser = await ForgetPassword.create({
           email: req.body.email,
           user: user,
@@ -217,9 +245,62 @@ module.exports.resetPassword = async function (req, res) {
           title: "Email",
         });
       }
-    } else {
+    }
+
+    //if user is not valid
+    else {
       req.flash("error", "User Not Found");
       return res.redirect("back");
+    }
+  } catch (error) {
+    req.flash("error", error);
+    return res.redirect("back");
+  }
+};
+
+module.exports.resetUserPassword = async function (req, res) {
+  try {
+    return res.render("user_password_reset", {
+      title: "Resest Password",
+    });
+  } catch (error) {
+    req.flash("error", error);
+    return res.redirect("back");
+  }
+};
+
+module.exports.changePassword = async function (req, res) {
+  try {
+    // check if password and confirmPassword Match
+    if (req.body.password != req.body.confirmPassword) {
+      req.flash("error", "Password and ConfirmPassword is't Matching");
+      return res.redirect("back");
+    } else {
+      // find forgetPasswordUser
+      const forgetPasswordUser = await ForgetPassword.findOne({
+        accessToken: req.query.accessToken,
+      });
+
+      //  if token is valid
+      if (forgetPasswordUser.isValid) {
+        await User.findByIdAndUpdate(forgetPasswordUser.user._id, {
+          password: req.body.password,
+        });
+
+        await ForgetPassword.findOneAndUpdate(
+          {
+            accessToken: req.query.accessToken,
+          },
+          { isValid: false }
+        );
+        req.flash("success", " Password Changed Successfully");
+        return res.redirect("/users/login");
+      }
+      //if token is not valid
+      else {
+        req.flash("error", "AccessToken Expired");
+        return res.redirect("/users/forgetPassword");
+      }
     }
   } catch (error) {
     req.flash("error", error);
