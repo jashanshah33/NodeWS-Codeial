@@ -76,6 +76,11 @@
   width: 60px;
 }
 
+.posts_Conatiner .like_btn_container i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 .posts_Conatiner .comment_icon {
   margin-left: 15px;
 }
@@ -114,16 +119,25 @@
 .diplayed_comment {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   margin-bottom: 4px;
 }
 
+.diplayed_comment .left_container,
 .diplayed_comment .comment_delete_container {
-  position: absolute;
-  right: 2%;
-  top: 2%;
-  box-sizing: border-box;
-  width: 1rem;
+  display: flex;
+}
+
+.diplayed_comment .left_container i,
+.diplayed_comment .comment_delete_container i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.diplayed_comment .comment_delete_btn_conatiner {
+  width: 15px;
+  height: 18px;
 }
 
 .diplayed_comment p {

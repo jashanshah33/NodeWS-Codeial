@@ -22,12 +22,7 @@
   <p><%=i.content %></p>
   <hr />
   <div class="post_img_container">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
-      alt=""
-      width="100%"
-      height="100%"
-    />
+    <div class="like_btn_container" ><i class="fa-regular fa-heart"></i></div>
     <p>10</p>
     <img
       class="comment_icon"
@@ -39,7 +34,11 @@
     <p><%=i.comments.length%></p>
   </div>
   <div class="comment_form_container">
-    <form id="post-<%= i._id%>-comments-form" action="/comments/createComment" method="post">
+    <form
+      id="post-<%= i._id%>-comments-form"
+      action="/comments/createComment"
+      method="post"
+    >
       <input name="comment" width="100%" type="text" required />
       <input name="post" value="<%=i._id%>" type="hidden" required />
 
@@ -51,11 +50,7 @@
   <h3 id="comments_header">Comments:-</h3>
   <!-- _comment partials added -->
   <div class="Comments_outer_container">
-    <div id="post-comments-<%= i._id %>">
-      
-      <%- include('./__comment') %>
-    
-    </div>
+    <div id="post-comments-<%= i._id %>"><%- include('./__comment') %></div>
   </div>
 </div>
 

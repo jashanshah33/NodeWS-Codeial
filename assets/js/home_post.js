@@ -134,3 +134,17 @@
   createPost();
   convertPostsToAjax();
 }
+
+const likeBtn = document.querySelectorAll(".like_btn_container>i");
+for (const btn of likeBtn) {
+  let like = false;
+
+  btn.addEventListener("click", function () {
+    like = !like;
+    if (like) {
+      btn.style.color = "red";
+    }else{
+      btn.style.color = "black"
+    }
+  });
+}
