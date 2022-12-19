@@ -127,7 +127,7 @@
 
       // get the post's id by splitting the id attribute
       let postId = self.prop("id").split("-")[1];
-      //new PostComments(postId);
+      new PostComments(postId);
     });
   };
 
@@ -135,16 +135,5 @@
   convertPostsToAjax();
 }
 
-const likeBtn = document.querySelectorAll(".like_btn_container>i");
-for (const btn of likeBtn) {
-  let like = false;
 
-  btn.addEventListener("click", function () {
-    like = !like;
-    if (like) {
-      btn.style.color = "red";
-    }else{
-      btn.style.color = "black"
-    }
-  });
-}
+

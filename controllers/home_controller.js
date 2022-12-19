@@ -23,7 +23,13 @@ module.exports.home = async function (req, res) {
     let posts = await Post.find({})
       .sort("-createdAt")
       .populate("user")
-      .populate({ path: "comments", populate: { path: "user" } });
+      .populate({
+        path: "comments",
+        populate: { path: "likes" },
+        populate: { path: "user" },
+      })
+      .populate("likes");
+
     for (const p of posts) {
       p.comments.reverse();
     }

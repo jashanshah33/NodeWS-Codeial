@@ -1,4 +1,3 @@
-<% for( i of posts){%>
 
 <div class="single_post_container" id="post-<%= i._id %>">
   <a href="/users/profile?id=<%=i.user._id%>">
@@ -22,8 +21,12 @@
   <p><%=i.content %></p>
   <hr />
   <div class="post_img_container">
-    <div class="like_btn_container" ><i class="fa-regular fa-heart"></i></div>
-    <p>10</p>
+    <div class="like_btn_container">
+      <a id="<%=i._id%>" href="/likes/toggle?id=<%=i._id%>&type=Post"
+        ><i class="fa-regular fa-heart"></i>
+      </a>
+    </div>
+    <p><%=i.likes.length%></p>
     <img
       class="comment_icon"
       src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
@@ -50,8 +53,13 @@
   <h3 id="comments_header">Comments:-</h3>
   <!-- _comment partials added -->
   <div class="Comments_outer_container">
-    <div id="post-comments-<%= i._id %>"><%- include('./__comment') %></div>
+    <div id="post-comments-<%= i._id %>">
+      <% for( comment of i.comments){%>
+        
+        <%- include('./__comment') %> 
+        
+        <%}%>
+    </div>
   </div>
 </div>
 
-<%}%>
