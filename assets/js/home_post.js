@@ -55,6 +55,8 @@
       <hr />
       <p>${post.content}</p>
       <hr />
+      <div class="post_img_container">
+
       <div class="like_btn_container">
       <a id="<%=${post._id}%>" href="/likes/toggle?id=<%=${post._id}%>&type=Post"
         ><i class="fa-regular fa-heart"></i>

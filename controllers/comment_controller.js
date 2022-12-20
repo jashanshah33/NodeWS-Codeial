@@ -51,7 +51,7 @@ module.exports.createComment = async function (req, res) {
           console.log("error in creating a queue ");
         }
 
-        console.log("Job enqueue", job.id);
+        // console.log("Job enqueue", job.id);
       });
 
       post.comments.push(comment);

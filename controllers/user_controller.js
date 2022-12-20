@@ -46,7 +46,7 @@ module.exports.login = function (req, res) {
 };
 
 module.exports.createUser = async function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   if (req.body.password != req.body.confirmPassword) {
     req.flash("error", "Password and confirmPassword is't matching");
     return res.redirect("back");
@@ -174,7 +174,7 @@ module.exports.resetPassword = async function (req, res) {
                 console.log("error in creating a queue ");
               }
 
-              console.log("Job enqueue", job.id);
+              // console.log("Job enqueue", job.id);
              
             });
           return res.render("check_email", {
@@ -201,7 +201,7 @@ module.exports.resetPassword = async function (req, res) {
               if (err) {
                 console.log("error in creating a queue ");
               }
-              console.log("Job enqueue", job.id);
+              // console.log("Job enqueue", job.id);
             });
 
           return res.render("check_email", {
@@ -228,7 +228,7 @@ module.exports.resetPassword = async function (req, res) {
               console.log("error in creating a queue ");
             }
 
-            console.log("Job enqueue", job.id);
+            // console.log("Job enqueue", job.id);
           
           });
         return res.render("check_email", {
