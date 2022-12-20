@@ -34,7 +34,7 @@ class PostComments {
           let comment = data.data.comment;
           const newComment = pSelf.createcommmentDom(comment);
           $(`#post-comments-${postId}`).prepend(newComment);
-          pSelf.deletePost($(" .comment_delete_link", newComment));
+          pSelf.deleteComment($(" .comment_delete_link", newComment));
 
           new Noty({
             theme: "relax",
@@ -53,14 +53,19 @@ class PostComments {
 
   createcommmentDom(comment) {
     return $(`<div  id="comment-${comment._id}"  class="diplayed_comment">
+    <div class="left_container">
+
     <a href="/users/profile?id=${comment.user._id}">
       <h4>${comment.user.name}:</h4>
     </a>
   
     <p>${comment.comment}</p>
+    </div>
+    <div class="comment_delete_container">
+    <div class="like_btn_container"><i class="fa-regular fa-heart"></i></div>
 
-    <div class="comment_delete_container" id="comment-${comment._id}">
-      <a class="comment_delete_link" href="/comments/destroy?id=${comment._id}">
+    <div class="comment_delete_btn_conatiner" id="comment-${comment._id}">
+      <a class="comment_delete_link" href="/comments/destroy/?id=${comment._id}">
         <img
           width="100%"
           height="100%"
@@ -69,11 +74,11 @@ class PostComments {
         />
       </a>
     </div>
-
+    </div>
     </div>`);
   }
 
-  deletePost(deleteLink) {
+  deleteComment(deleteLink) {
     $(deleteLink).click(function (e) {
       e.preventDefault();
 

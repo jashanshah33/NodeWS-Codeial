@@ -55,14 +55,12 @@
       <hr />
       <p>${post.content}</p>
       <hr />
-      <div class="post_img_container">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
-          alt=""
-          width="100%"
-          height="100%"
-        />
-        <p>10</p>
+      <div class="like_btn_container">
+      <a id="<%=${post._id}%>" href="/likes/toggle?id=<%=${post._id}%>&type=Post"
+        ><i class="fa-regular fa-heart"></i>
+      </a>
+    </div>
+    <p>0</p>
         <img
           class="comment_icon"
           src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
@@ -134,6 +132,3 @@
   createPost();
   convertPostsToAjax();
 }
-
-
-

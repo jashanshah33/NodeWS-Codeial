@@ -1,3 +1,4 @@
+<% for( i of posts){%>
 
 <div class="single_post_container" id="post-<%= i._id %>">
   <a href="/users/profile?id=<%=i.user._id%>">
@@ -54,12 +55,12 @@
   <!-- _comment partials added -->
   <div class="Comments_outer_container">
     <div id="post-comments-<%= i._id %>">
-      <% for( comment of i.comments){%>
-        
-        <%- include('./__comment') %> 
-        
-        <%}%>
+      <% for( comment of i.comments){%> <%- include('./__comment') %> <%}%>
     </div>
   </div>
 </div>
 
+<%}%>
+
+<script src="/js/home_comment.js"></script>
+<script src="/js/home_likes.js"></script>
