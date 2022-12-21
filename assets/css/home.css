@@ -76,9 +76,21 @@
   width: 60px;
 }
 
+.posts_Conatiner .like_btn_container .toggle-like-button {
+  display: flex;
+}
+
 .posts_Conatiner .like_btn_container i {
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.posts_Conatiner #black_color_like {
+  color: black;
+}
+
+.posts_Conatiner #red_color_like {
+  color: red;
 }
 
 .posts_Conatiner .comment_icon {

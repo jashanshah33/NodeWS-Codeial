@@ -35,6 +35,8 @@ class PostComments {
           const newComment = pSelf.createcommmentDom(comment);
           $(`#post-comments-${postId}`).prepend(newComment);
           pSelf.deleteComment($(" .comment_delete_link", newComment));
+          new ToggleLike($(" .toggle-like-button", newComment));
+          $(`#post-${postId}-comments-form>input`).val("");
 
           new Noty({
             theme: "relax",
@@ -62,8 +64,17 @@ class PostComments {
     <p>${comment.comment}</p>
     </div>
     <div class="comment_delete_container">
-    <div class="like_btn_container"><i class="fa-regular fa-heart"></i></div>
+    <div class="like_btn_container">
+    <a
+      class="toggle-like-button"
+      data-likes=${comment.likes.length}
+      href="/likes/toggle?id=${comment._id}&type=Comment"
+    >
+      <i id="Comment-${comment._id}" class="fa-regular fa-heart"></i>
 
+      <span style="margin: 0 10px 0 -8px">${comment.likes.length}</span>
+    </a>
+  </div>
     <div class="comment_delete_btn_conatiner" id="comment-${comment._id}">
       <a class="comment_delete_link" href="/comments/destroy/?id=${comment._id}">
         <img

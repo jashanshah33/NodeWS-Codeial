@@ -23,11 +23,17 @@
   <hr />
   <div class="post_img_container">
     <div class="like_btn_container">
-      <a id="<%=i._id%>" href="/likes/toggle?id=<%=i._id%>&type=Post"
-        ><i class="fa-regular fa-heart"></i>
+      <a
+        class="toggle-like-button"
+        data-likes="<%= i.likes.length %>"
+        href="/likes/toggle?id=<%=i._id%>&type=Post"
+      >
+      
+        <i id="like-<%=i._id%>" class="fa-regular fa-heart"></i>
+
+        <p><%=i.likes.length%></p>
       </a>
     </div>
-    <p><%=i.likes.length%></p>
     <img
       class="comment_icon"
       src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
@@ -55,7 +61,11 @@
   <!-- _comment partials added -->
   <div class="Comments_outer_container">
     <div id="post-comments-<%= i._id %>">
-      <% for( comment of i.comments){%> <%- include('./__comment') %> <%}%>
+      <% for( comment of i.comments){%> 
+        
+        <%- include('./__comment') %> 
+        
+        <%}%>
     </div>
   </div>
 </div>
@@ -63,4 +73,3 @@
 <%}%>
 
 <script src="/js/home_comment.js"></script>
-<script src="/js/home_likes.js"></script>

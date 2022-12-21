@@ -70,15 +70,23 @@
     width: 60px;
   }
   .like_btn_container {
+    .toggle-like-button {
+      display: flex;
+    }
     i {
       font-size: 1.2rem;
       cursor: pointer;
     }
   }
+  #black_color_like{
+    color: black;
+  }
+  #red_color_like{
+    color: red;
+  }
 
   .comment_icon {
     margin-left: 15px;
-    
   }
 }
 

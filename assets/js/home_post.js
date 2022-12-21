@@ -13,7 +13,10 @@
           const post = data.data.post;
           // console.log("data", post);
           let newPost = createNewPost(post);
-          //$("#post_textarea").val("");
+          
+          $("#post_textarea").val("");
+
+          
 
           $("#post_list_container").prepend(newPost);
           new Noty({
@@ -27,6 +30,9 @@
           deletePost($(" .Post_delete_btn_link", newPost));
           // call the create comment class
           new PostComments(data.data.post._id);
+
+          new ToggleLike($(' .toggle-like-button', newPost));
+
         },
         error: function (err) {
           console.log(err.responseText);
@@ -58,11 +64,12 @@
       <div class="post_img_container">
 
       <div class="like_btn_container">
-      <a id="<%=${post._id}%>" href="/likes/toggle?id=<%=${post._id}%>&type=Post"
+      <a class="toggle-like-button" id="${post._id}" href="/likes/toggle?id=${post._id}&type=Post"
         ><i class="fa-regular fa-heart"></i>
+        <p>0</p>
       </a>
     </div>
-    <p>0</p>
+  
         <img
           class="comment_icon"
           src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png"
@@ -134,3 +141,4 @@
   createPost();
   convertPostsToAjax();
 }
+

@@ -9,7 +9,7 @@ module.exports.likeToggle = async function (req, res) {
 
   try {
     let likeable;
-    // let deleted = false;
+    let deleted = false;
 
     if (req.query.type == "Post") {
       likeable = await Post.findById(req.query.id);
@@ -40,16 +40,12 @@ module.exports.likeToggle = async function (req, res) {
       likeable.save();
     }
 
-    if (req.xhr) {
-      return res.status(200).json( {
-        message: "Request Successfull!",
-        data: {
-          deleted: deleted,
-        },
-      });
-    }
-
-    return res.redirect("back");
+    return res.status(200).json({
+      message: "Request Successfull!",
+      data: {
+        deleted: deleted,
+      },
+    });
   } catch (error) {
     req.flash("error", error);
     return res.redirect("back");

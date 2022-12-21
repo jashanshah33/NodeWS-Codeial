@@ -21,9 +21,8 @@
 
     <section id="post_list_container" class="posts_Conatiner">
       <!-- _post partials added -->
-        
-        <%- include("./__post") %> 
-        
+
+      <%- include("./__post") %>
     </section>
   </main>
   <aside class="friends_list_container">
@@ -38,3 +37,10 @@
 
 <script src="/js/home_post.js"></script>
 
+<script src="js/toggle_likes.js"></script>
+<script>
+  $(".toggle-like-button").each(function () {
+    let self = this;
+    let toggleLike = new ToggleLike(self);
+  });
+</script>
