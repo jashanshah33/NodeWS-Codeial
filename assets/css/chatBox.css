@@ -1,0 +1,87 @@
+#chat_logo {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#chat_logo img {
+  width: 100%;
+  height: 100%;
+}
+
+#chat_box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 30%;
+  min-width: 250px;
+  min-height: 200px;
+  z-index: 100;
+  padding: 5px 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: black;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
+  border-radius: 5% 5% 0 0;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+#chat_box #chat {
+  display: flex;
+  flex-direction: column;
+}
+
+#chat_box .friend,
+#chat_box .user {
+  color: white;
+  margin: 6px;
+  padding: 2px 5px;
+}
+
+#chat_box .friend {
+  align-self: flex-start;
+  background-color: red;
+  margin-top: 10px;
+}
+
+#chat_box .user {
+  align-self: flex-end;
+  background-color: blue;
+}
+
+#chat_box form {
+  display: flex;
+  flex-direction: row;
+  padding: 0 5px;
+}
+
+#chat_box form input {
+  display: flex;
+  flex-grow: 6;
+  flex-shrink: 1;
+  min-width: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+#chat_box form button {
+  background-color: #4040ed;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0 12px;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+#chat_box form button:hover {
+  background-color: #b8b8b8;
+  color: black;
+}

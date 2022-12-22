@@ -22,7 +22,11 @@
     <%- include('_header.ejs'); %>
 
     <main class="main_layout"><%- body %></main>
-    <%- include('_footer.ejs'); %> <%- script %>
+    <%- include('_footer.ejs'); %> 
+    <%- include('_chat.ejs'); %>
+
+    <%- script %>
+
 
     <script>
       <% if (flash.success && flash.success.length > 0) {%>

@@ -14,10 +14,11 @@ footer {
 
 .footer_nav_container ul {
   list-style: none;
+  display: flex;
 }
 
 .footer_nav_container li {
-  margin-top: 5px;
+  margin-left: 20px;
 }
 
 .footer_nav_container a {

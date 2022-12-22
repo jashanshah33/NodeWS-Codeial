@@ -66,7 +66,6 @@ class ToggleFriend {
             $(".toggle-friend-button>button")[0].innerText = "Remove Friend";
           }
 
-          console.log("********", $(self).attr("data-friend"));
 
           // let likesCount = parseInt($(self).attr("data-likes"));
           // if (data.data.deleted == true) {
@@ -87,4 +86,3 @@ class ToggleFriend {
   }
 }
 
-console.log($(".toggle-friend-button").attr("data-friend"));
