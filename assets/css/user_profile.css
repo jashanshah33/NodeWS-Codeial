@@ -57,6 +57,22 @@
   color: black;
 }
 
+.add_frind_btn {
+  margin-top: 30px;
+  background-color: #4040ed;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.add_frind_btn:hover {
+  background-color: #b8b8b8;
+  color: black;
+}
+
 #profile_edit_form {
   display: none;
   flex-direction: column;

@@ -9,6 +9,8 @@ router.use("/users", require("./users"));
 router.use("/posts", require("./post"));
 router.use("/comments", require("./comment"));
 router.use('/likes', require('./like'))
+router.use("/friends", require("./friend"));
+
 router.use("/api", require("./api"));
 
 

@@ -25,6 +25,13 @@
     <div class="btn_container">
       <button id="profile_edit_btn">Edit</button>
     </div>
+    <%}else{%>
+
+    <div>
+      <a data-friend="" class="toggle-friend-button" href="/friends/toggleFriend?id=<%=profileUser.id%>">
+        <button class="add_frind_btn">Add Friends</button>
+      </a>
+    </div>
     <%}%>
     <form
       id="profile_edit_form"
@@ -69,3 +76,11 @@
 
   <script src="/js/userProfile.js"></script>
 </div>
+<script>
+  $(".toggle-friend-button").each(function () {
+    let self = this;
+    let toggleFriend = new ToggleFriend(self);
+
+ 
+  });
+</script>

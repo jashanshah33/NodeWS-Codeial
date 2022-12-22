@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Friends = require('../models/friends')
 const fs = require("fs");
 const path = require("path");
 const ForgetPassword = require("../models/forgotPassword");
@@ -15,7 +16,11 @@ module.exports.profile = async function (req, res) {
   // });
 
   try {
-    const user = await User.findById(req.query.id);
+    const user = await User.findById(req.query.id).populate("friends");
+    const friendList = await Friends.find({user: req.user._id})
+
+    res.locals.friends = friendList;
+
     return res.render("userProfile", {
       title: "Profile",
       profileUser: user,
@@ -175,7 +180,6 @@ module.exports.resetPassword = async function (req, res) {
               }
 
               // console.log("Job enqueue", job.id);
-             
             });
           return res.render("check_email", {
             title: "Email",
@@ -193,7 +197,6 @@ module.exports.resetPassword = async function (req, res) {
           user = await user.populate({
             path: "user",
           });
-
 
           let job = queue
             .create("forgotpasswordEmails", user)
@@ -229,7 +232,6 @@ module.exports.resetPassword = async function (req, res) {
             }
 
             // console.log("Job enqueue", job.id);
-          
           });
         return res.render("check_email", {
           title: "Email",
