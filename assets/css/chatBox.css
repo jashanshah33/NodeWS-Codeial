@@ -35,34 +35,71 @@
 
 #chat_box #chat {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
+  overflow-y: scroll;
+  padding: 0 5px;
 }
 
-#chat_box .friend,
-#chat_box .user {
+#chat_box #chat::-webkit-scrollbar {
+  display: none;
+}
+
+#chat_box .other,
+#chat_box .self {
   color: white;
   margin: 6px;
   padding: 2px 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  border-radius: 4px;
 }
 
-#chat_box .friend {
+#chat_box .other {
   align-self: flex-start;
-  background-color: red;
+  background-color: #bd7171;
   margin-top: 10px;
+  position: relative;
 }
 
-#chat_box .user {
+#chat_box .other::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: 10%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid #bd7171;
+  border-bottom: 5px solid transparent;
+}
+
+#chat_box .self {
   align-self: flex-end;
-  background-color: blue;
+  background-color: #3a3adf;
+  position: relative;
 }
 
-#chat_box form {
+#chat_box .self::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 10%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 10px solid #3a3adf;
+  border-bottom: 5px solid transparent;
+}
+
+#chat_box #form {
   display: flex;
   flex-direction: row;
   padding: 0 5px;
 }
 
-#chat_box form input {
+#chat_box #form input {
   display: flex;
   flex-grow: 6;
   flex-shrink: 1;
@@ -70,7 +107,7 @@
   border-radius: 5px 0 0 5px;
 }
 
-#chat_box form button {
+#chat_box #form button {
   background-color: #4040ed;
   color: white;
   border: none;
@@ -81,7 +118,7 @@
   cursor: pointer;
 }
 
-#chat_box form button:hover {
+#chat_box #form button:hover {
   background-color: #b8b8b8;
   color: black;
 }
