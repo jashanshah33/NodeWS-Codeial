@@ -17,7 +17,7 @@
   bottom: 0;
   right: 0;
   width: 25%;
-  height: 30%;
+  height: 35%;
   min-width: 250px;
   min-height: 200px;
   z-index: 100;
@@ -37,7 +37,8 @@
     flex-grow: 1;
     flex-direction: column;
     overflow-y: scroll;
-    padding: 0 5px;
+    margin: 5px 0;
+    padding: 0px 5px;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -51,6 +52,8 @@
     flex-direction: column;
     text-align: start;
     border-radius: 4px;
+    max-width: 80%;
+
   }
   .other {
     align-self: flex-start;

@@ -14,7 +14,7 @@ class chatEngine {
   connectionHandler() {
     let self = this;
     this.socket.on("connect", function () {
-      console.log("Connection established !!!!!!");
+      // console.log("Connection established !!!!!!");
 
       self.socket.emit("join_room", {
         user_email: self.userEmail,
@@ -22,7 +22,7 @@ class chatEngine {
       });
 
       self.socket.on("user_joined", function (data) {
-        console.log("A user joined", data);
+        // console.log("A user joined", data);
       });
     });
 
@@ -33,7 +33,7 @@ class chatEngine {
         url: "/chat/create",
         data: $("#send_message_form").serialize(),
         success: function (data) {
-          console.log(data);
+          // console.log(data);
 
           let msg = $("#message_input").val();
 
