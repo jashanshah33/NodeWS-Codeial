@@ -151,10 +151,17 @@
 }
 
 .friends_list_container {
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
-  border-radius: 10px;
   width: 25%;
   margin-top: 74px;
+
+
+  div{
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
+    border-radius: 10px;
+    padding: 5px 0;
+    margin-bottom: 30px;
+  }
+
 
   ul {
     list-style: none;

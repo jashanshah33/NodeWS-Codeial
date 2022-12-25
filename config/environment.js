@@ -1,8 +1,8 @@
 const development = {
   name: "development",
   asset_path: "assets",
-  session_cookie_key: "jashanshah",
-  db: "codeial_development",
+  session_cookie_key: "u9JRLN892AY50nc51WwJk5eNzaDdpA8z",
+  db: "socialBook_development",
   smtp: {
     service: "gmail",
     host: "smtp.gmail.com",
@@ -18,7 +18,7 @@ const development = {
 
   google_client_secret: "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",
   google_callback_URL: "http://localhost:8000/users/auth/google/callback",
-  jwt_secret: "Jashan",
+  jwt_secret: "2P68vVRYtqdlimPfkcV5TWCgiLaQa4yR",
 };
 
 const production = {
