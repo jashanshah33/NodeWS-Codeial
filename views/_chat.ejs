@@ -2,23 +2,31 @@
 
 <div id="chat_box">
   <div id="chat">
-    <!-- <p class="other">
-      <sub>Jashan</sub>
-      <span>Hlo</span>
+    <% for(let i of chat){%> 
+      
+      <%if (locals.user.id == i.user.id){%>
+    <p class="self">
+    <%}else{%>
+    <p class="other">
+      <%}%>
+      <sub> <%=i.user.name%> </sub>
+      <span> <%=i.content%> </span>
     </p>
-    <p class="self">Me</p> -->
+    <%}%>                          
+
   </div>
-  <!-- <form action=""> -->
-  <div id="form">
+  <form id="send_message_form" action="/chats/create" type="post">
+    <!-- <div id="form"> -->
     <input
       id="message_input"
       type="text"
+      name="message"
       placeholder="Type message here"
       required
     />
-    <button id="send_message">Send</button>
-  </div>
-  <!-- </form> -->
+    <button type="submit" id="send_message">Send</button>
+    <!-- </div> -->
+  </form>
 </div>
 
 <div id="chat_logo">

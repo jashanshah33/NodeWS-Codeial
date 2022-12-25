@@ -26,20 +26,32 @@ class chatEngine {
       });
     });
 
-    $("#send_message").click(function (e) {
-      // e.preventDefault();
-      let msg = $("#message_input").val();
+    $("#send_message_form").submit(function (e) {
+      e.preventDefault();
+      $.ajax({
+        type: "post",
+        url: "/chat/create",
+        data: $("#send_message_form").serialize(),
+        success: function (data) {
+          console.log(data);
 
-      if (msg != "") {
-        self.socket.emit("send_msg", {
-          message: msg,
-          user_email: self.userEmail,
-          user_name: self.userName,
-          chatroom: "socialBook",
-        });
+          let msg = $("#message_input").val();
 
-        $("#message_input").val("");
-      }
+          if (msg != "") {
+            self.socket.emit("send_msg", {
+              message: msg,
+              user_email: self.userEmail,
+              user_name: self.userName,
+              chatroom: "socialBook",
+            });
+
+            $("#message_input").val("");
+          }
+        },
+        error: function (err) {
+          console.log(err.responseText);
+        },
+      });
     });
 
     self.socket.on("receive_message", function (data) {
@@ -77,6 +89,9 @@ class chatEngine {
 $("#chat_logo").click(function (e) {
   e.stopPropagation();
   $("#chat_box").css("display", "flex");
+
+  const chat = document.getElementById("chat");
+  chat.scrollTop = chat.scrollHeight;
 });
 $("#chat_box").click(function (e) {
   e.stopPropagation();

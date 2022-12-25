@@ -34,7 +34,12 @@
     </ul>
   </aside>
 </div>
-<div><%- include('_chat.ejs'); %></div>
+<div>
+  <%if(locals.user){%>
+  <%- include('_chat.ejs'); %>
+  <%}%>
+
+</div>
 
 <script src="/js/home_post.js"></script>
 

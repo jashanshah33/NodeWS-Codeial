@@ -1,5 +1,6 @@
 const Post = require("../models/post");
 const User = require("../models/user");
+const Chat = require("../models/chat");
 
 module.exports.home = async function (req, res) {
   // Post.find({})
@@ -39,10 +40,14 @@ module.exports.home = async function (req, res) {
 
     let users = await User.find({});
 
+    let chat = await Chat.find({})
+      .populate("user")
+
     return res.render("home", {
       title: "Home",
       posts: posts,
       allUsers: users,
+      chat: chat,
     });
   } catch (error) {
     req.flash("error", error);

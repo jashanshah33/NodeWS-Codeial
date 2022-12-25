@@ -93,13 +93,13 @@
   border-bottom: 5px solid transparent;
 }
 
-#chat_box #form {
+#chat_box form {
   display: flex;
   flex-direction: row;
   padding: 0 5px;
 }
 
-#chat_box #form input {
+#chat_box form input {
   display: flex;
   flex-grow: 6;
   flex-shrink: 1;
@@ -107,7 +107,7 @@
   border-radius: 5px 0 0 5px;
 }
 
-#chat_box #form button {
+#chat_box form button {
   background-color: #4040ed;
   color: white;
   border: none;
@@ -118,7 +118,7 @@
   cursor: pointer;
 }
 
-#chat_box #form button:hover {
+#chat_box form button:hover {
   background-color: #b8b8b8;
   color: black;
 }
