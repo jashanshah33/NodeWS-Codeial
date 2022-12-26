@@ -37,6 +37,7 @@ class PostComments {
           pSelf.deleteComment($(" .comment_delete_link", newComment));
           new ToggleLike($(" .toggle-like-button", newComment));
           $(`#post-${postId}-comments-form>input`).val("");
+          $(`#comments-length-${postId}`).html(data.data.allComments.length)
 
           new Noty({
             theme: "relax",
@@ -97,8 +98,10 @@ class PostComments {
         type: "get",
         url: $(deleteLink).prop("href"),
         success: function (data) {
-          // console.log(data);
           $(`#comment-${data.data.comment_id}`).remove();
+
+          $(`#comments-length-${data.data.postId}`).html(data.data.allComments.length)
+
 
           new Noty({
             theme: "relax",

@@ -6,6 +6,7 @@ const commentEmailWorker = require("../workers/comment_email_worker");
 // const commentMailer = require("../mailers/comment_mailer");
 
 module.exports.createComment = async function (req, res) {
+
   //console.log(req.body);
   // Post.findById(req.body.post, function (err, post) {
   //   if (err) {
@@ -57,12 +58,17 @@ module.exports.createComment = async function (req, res) {
       post.comments.push(comment);
       post.save();
 
+      let allComments = []
+       allComments = await Comment.find({ post: req.body.post})
+
+    
       if (req.xhr) {
         // comment = await comment.populate("user", "name, email").execPopulate();
         comment.user = req.user;
         return res.status(200).json({
           data: {
             comment: comment,
+            allComments: allComments,
           },
           message: "Comment Added!",
         });
@@ -110,10 +116,15 @@ module.exports.destroyComment = async function (req, res) {
         $pull: { comments: req.query.id },
       });
 
+      let allComments = []
+      allComments = await Comment.find({ post: post._id})
+
       if (req.xhr) {
         return res.status(200).json({
           data: {
             comment_id: req.query.id,
+            allComments:allComments,
+            postId: post._id
           },
           message: "Comment Deleted!",
         });

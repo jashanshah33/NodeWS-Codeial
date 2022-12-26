@@ -80,6 +80,10 @@
   display: flex;
 }
 
+.posts_Conatiner .like_btn_container .toggle-like-button-only {
+  display: flex;
+}
+
 .posts_Conatiner .like_btn_container i {
   font-size: 1.2rem;
   cursor: pointer;

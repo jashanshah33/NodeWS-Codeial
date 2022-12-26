@@ -30,9 +30,11 @@
       <h3>Friends</h3>
       <ul>
         <%if(friends.length){%>
+          
         <% for(let i of friends){%>
         <li><a href="/users/profile?id=<%=i.user_to._id%>"><%=i.user_to.name%></a></li>
         <%}%>
+
         <%}else{%>
           <li>No Friends</li>
           <%}%>

@@ -23,6 +23,7 @@
   <hr />
   <div class="post_img_container">
     <div class="like_btn_container">
+      <% if(locals.user){%>
       <a
         class="toggle-like-button"
         data-likes="<%= i.likes.length %>"
@@ -33,6 +34,19 @@
 
         <p><%=i.likes.length%></p>
       </a>
+      <%}else{%>  
+        <a
+        class="toggle-like-button-only"
+        data-likes="<%= i.likes.length %>"
+        href="/users/login"
+      >
+      
+        <i id="like-<%=i._id%>" class="fa-regular fa-heart"></i>
+
+        <p><%=i.likes.length%></p>
+      </a>
+        <%}%>  
+
     </div>
     <img
       class="comment_icon"
@@ -41,7 +55,7 @@
       width="100%"
       height="100%"
     />
-    <p><%=i.comments.length%></p>
+    <p id="comments-length-<%=i._id%>"><%=i.comments.length%></p>
   </div>
   <div class="comment_form_container">
     <form
@@ -51,8 +65,14 @@
     >
       <input name="comment" width="100%" type="text" required />
       <input name="post" value="<%=i._id%>" type="hidden" required />
+      <% if(locals.user){%>
 
       <button type="submit">Add</button>
+      <%}else{%>
+        <a href="/users/login">
+        <button type="button">Add</button>
+      </a>
+        <%}%>
     </form>
   </div>
 

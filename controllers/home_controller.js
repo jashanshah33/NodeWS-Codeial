@@ -3,7 +3,6 @@ const User = require("../models/user");
 const Chat = require("../models/chat");
 const Friends = require("../models/friends");
 
-
 module.exports.home = async function (req, res) {
   // Post.find({})
   //   .populate("user")
@@ -42,19 +41,21 @@ module.exports.home = async function (req, res) {
 
     let users = await User.find({});
 
-    let chat = await Chat.find({})
-      .populate("user")
+    let chat = await Chat.find({}).populate("user");
 
-      let friends = await Friends.find({user: req.user.id}).populate("user_to")
-
-      console.log('*****************',friends);
+    let friends;
+    if (req.user) {
+      friends = await Friends.find({ user: req.user.id }).populate("user_to");
+    }else{
+      friends = []
+    }
 
     return res.render("home", {
       title: "Home",
       posts: posts,
       allUsers: users,
       chat: chat,
-      friends:friends
+      friends: friends,
     });
   } catch (error) {
     req.flash("error", error);
