@@ -64,9 +64,9 @@
       <div class="post_img_container">
 
       <div class="like_btn_container">
-      <a class="toggle-like-button" id="${post._id}" href="/likes/toggle?id=${post._id}&type=Post"
+      <a class="toggle-like-button" data-likes="${post.likes.length}" id="${post._id}" href="/likes/toggle?id=${post._id}&type=Post"
         ><i class="fa-regular fa-heart"></i>
-        <p>0</p>
+        <p>${post.likes.length}</p>
       </a>
     </div>
   

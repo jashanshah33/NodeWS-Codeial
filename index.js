@@ -22,15 +22,19 @@ chatServer.listen(5000)
 console.log('chat server is listening on Port 5000');
 
 const path = require('path')
-app.use(
-  sassMiddleware({
-    src: path.join(__dirname,'/' , env.asset_path, '/scss') ,
-    dest: path.join(__dirname,'/' , env.asset_path, '/css'),
-    debug: true,
-    outputStyle: "expanded",
-    prefix: "/css",
-  })
-);
+
+if (env.name == 'development') {
+  app.use(
+    sassMiddleware({
+      src: path.join(__dirname,'/' , env.asset_path, '/scss') ,
+      dest: path.join(__dirname,'/' , env.asset_path, '/css'),
+      debug: true,
+      outputStyle: "expanded",
+      prefix: "/css",
+    })
+  );
+}
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static(env.asset_path));
