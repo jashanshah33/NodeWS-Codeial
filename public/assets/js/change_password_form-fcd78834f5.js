@@ -1,0 +1,1 @@
+const resetForm=document.querySelector("#change_password_form"),token=(console.log(window.location.search.slice(1)),window.location.search.slice(1));resetForm.action="/users/changePassword?accessToken="+token;

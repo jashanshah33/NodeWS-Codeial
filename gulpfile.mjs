@@ -1,31 +1,44 @@
+//-----------------------------------------------//
+/*
 const gulp = require("gulp");
-
+const { task } = require("gulp");
+const { dest, src } = require("gulp");
 const sass = require("gulp-sass")(require("node-sass"));
-const cssnano = require("gulp-cssnano");
 const rev = require("gulp-rev");
-const uglify = require("gulp-uglify-es").default;
-const imagemin = require("gulp-imagemin");
-const del = require("del");
+const cssnano = require("gulp-cssnano");
+*/
+
+import gulp from "gulp";
+import dartSass from "sass";
+import gulpsass from "gulp-sass";
+const sass = gulpsass(dartSass);
+import rev from "gulp-rev";
+import cssnano from "gulp-cssnano";
+import uglify from "gulp-uglify";
+import minifyCSS from "gulp-minify-css";
+import imagemin from "gulp-imagemin";
+import { deleteAsync } from "del";
 
 gulp.task("css", function (done) {
   console.log("minifying css...");
   gulp
-    .src("./assets/sass/**/*.scss")
+    .src("./assets/sass/**/*.scss") //changed
     .pipe(sass())
     .pipe(cssnano())
-    .pipe(gulp.dest("./assets.css"));
+    .pipe(gulp.dest("./assets.css")); //changed
 
   gulp
-    .src("./assets/**/*.css")
+    .src("./assets/**/*.css") //changed
+    .pipe(minifyCSS())
     .pipe(rev())
-    .pipe(gulp.dest("./public/assets"))
+    .pipe(gulp.dest("./public/assets")) //changed
     .pipe(
       rev.manifest({
         cwd: "public",
         merge: true,
       })
     )
-    .pipe(gulp.dest("./public/assets"));
+    .pipe(gulp.dest("./public/assets")); //changed
   done();
 });
 
@@ -47,7 +60,7 @@ gulp.task("js", function (done) {
 });
 
 gulp.task("images", function (done) {
-  console.log("compressing images...");
+  console.log("minifying images...");
   gulp
     .src("./assets/**/*.+(png|jpg|gif|svg|jpeg)")
     .pipe(imagemin())
@@ -63,9 +76,9 @@ gulp.task("images", function (done) {
   done();
 });
 
-// empty the public/assets directory
+// empty the public/assets driectory
 gulp.task("clean:assets", function (done) {
-  del.sync("./public/assets");
+  deleteAsync("./public/assets");
   done();
 });
 
