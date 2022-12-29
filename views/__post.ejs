@@ -63,7 +63,7 @@
       action="/comments/createComment"
       method="post"
     >
-      <input name="comment" width="100%" type="text" required />
+      <input name="comment" placeholder="Type Comment..." width="100%" type="text" required />
       <input name="post" value="<%=i._id%>" type="hidden" required />
       <% if(locals.user){%>
 
