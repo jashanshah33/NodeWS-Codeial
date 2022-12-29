@@ -14,7 +14,7 @@ const accessLogStream = rfs.createStream("access.log", {
 
 const development = {
   name: "development",
-  asset_path: "assets",
+  asset_path: "./assets",
   session_cookie_key: "jashanShah",
   db: "socialBook_development",
   smtp: {
