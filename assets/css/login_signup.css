@@ -16,6 +16,12 @@
   border-radius: 5%;
 }
 
+@media only screen and (max-width: 600px) {
+  .outer_header_form_container form {
+    width: 80%;
+  }
+}
+
 .outer_header_form_container div {
   display: flex;
   flex-direction: column;
@@ -30,7 +36,8 @@
 .outer_header_form_container input {
   border: 2px solid #c5c5c5;
   height: 1.3rem;
-  width: 13rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .outer_header_form_container button {

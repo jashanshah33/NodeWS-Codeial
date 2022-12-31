@@ -18,6 +18,8 @@ router.post(
 router.get("/logout", userController.destroyUserSession);
 router.post("/update", passport.checkAuthentication, userController.updateUser);
 
+router.get("/friends", userController.userFriends);
+
 router.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })

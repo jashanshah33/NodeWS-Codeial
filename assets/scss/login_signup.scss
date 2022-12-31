@@ -13,6 +13,9 @@
     height: 90%;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
     border-radius: 5%;
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+    }
   }
   div {
     display: flex;
@@ -27,7 +30,9 @@
   input {
     border: 2px solid rgb(197, 197, 197);
     height: 1.3rem;
-    width: 13rem;
+    width: 100%;
+    min-width: 0;
+    
   }
 
   button {

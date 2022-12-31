@@ -19,6 +19,12 @@
   margin-top: 30px;
 }
 
+@media only screen and (max-width: 600px) {
+  .profile_container {
+    width: 80%;
+  }
+}
+
 .profile_container div {
   margin: 5px 0;
   font-size: 1.3rem;
@@ -89,6 +95,7 @@
 
 #profile_edit_form input {
   width: 100%;
+  min-width: 0;
 }
 
 #profile_edit_form button {

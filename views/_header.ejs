@@ -6,8 +6,11 @@
       <h3>Social Book</h3>
     </a>
   </div>
-  <div class="list_container">
-    <ul>
+  <div id="dropDown_icon">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div id="list_container">
+    <ul id="dropDown_list">
       <li>
         <a href="/"> Home</a>
       </li>
@@ -15,6 +18,9 @@
       <% if(locals.user) {%>
       <li>
         <a href="/users/profile?id=<%-user.id%>"> Profile</a>
+      </li>
+      <li id="friend_li">
+        <a href="/users/friends?id=<%-user.id%>"> Friends</a>
       </li>
       <li>
         <a href="/users/logout"> Logout</a>
@@ -33,3 +39,4 @@
     </ul>
   </div>
 </nav>
+<script src="<%=assetPath('js/header.js')%>"></script>

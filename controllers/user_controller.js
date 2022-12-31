@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const Friends = require('../models/friends')
+const Friends = require("../models/friends");
 const fs = require("fs");
 const path = require("path");
 const ForgetPassword = require("../models/forgotPassword");
@@ -17,7 +17,7 @@ module.exports.profile = async function (req, res) {
 
   try {
     const user = await User.findById(req.query.id).populate("friends");
-    const friendList = await Friends.find({user: req.user._id})
+    const friendList = await Friends.find({ user: req.user._id });
 
     res.locals.friends = friendList;
 
@@ -44,6 +44,19 @@ module.exports.signup = function (req, res) {
 module.exports.login = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/users/profile");
+  }
+  return res.render("user_login", {
+    title: "Login",
+  });
+};
+
+module.exports.userFriends = async function (req, res) {
+  if (req.isAuthenticated()) {
+   let friends = await Friends.find({user: req.query.id}).populate('user_to')
+    return res.render("friends", {
+      title: "Friends",
+      friends: friends
+    });
   }
   return res.render("user_login", {
     title: "Login",
