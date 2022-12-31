@@ -1019,3 +1019,9 @@
 ::1 - - [31/Dec/2022:11:56:08 +0000] "GET /users/profile?id=63a94eb8e204869b3be65f22 HTTP/1.1" 302 68 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 ::1 - - [31/Dec/2022:11:56:08 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 ::1 - - [31/Dec/2022:11:56:10 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [31/Dec/2022:12:17:45 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [31/Dec/2022:12:17:47 +0000] "GET /users/forgetPassword HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [31/Dec/2022:12:17:50 +0000] "POST /users/resetPassword HTTP/1.1" 200 1922 "http://localhost:8000/users/forgetPassword" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [31/Dec/2022:12:17:50 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/users/resetPassword" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+[0mPOST /users/resetPassword [32m200[0m 45.079 ms - 1886[0m
+::1 - - [31/Dec/2022:12:19:47 +0000] "POST /users/resetPassword HTTP/1.1" 200 1941 "http://localhost:8000/users/forgetPassword" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"

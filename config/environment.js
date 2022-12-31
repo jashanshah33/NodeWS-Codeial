@@ -42,7 +42,7 @@ const production = {
   name: "production",
   asset_path: process.env.SOCIALBOOK_asset_path,
   session_cookie_key: process.env.SOCIALBOOK_session_cookie_key,
-  db: process.env.SOCIALBOOK_db,
+  db: process.env.SOCIALBOOK_database,
   smtp: {
     service: "gmail",
     host: "smtp.gmail.com",
