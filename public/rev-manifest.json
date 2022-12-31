@@ -1,10 +1,9 @@
 {
-  "css/chatBox.css": "css/chatBox-a252a00bd1.css",
-  "css/footer.css": "css/footer-ed8d15c1b5.css",
-  "css/forgotPassword.css": "css/forgotPassword-22bcf5c5cd.css",
-  "css/header.css": "css/header-025a76a846.css",
-  "css/home.css": "css/home-0aa7e160db.css",
-  "css/layout.css": "css/layout-1e617bb79b.css",
-  "css/login_signup.css": "css/login_signup-cebe3654ce.css",
-  "css/user_profile.css": "css/user_profile-8e0db6b230.css"
+  "js/change_password_form.js": "js/change_password_form-fcd78834f5.js",
+  "js/chatEngine.js": "js/chatEngine-d5ff13ec86.js",
+  "js/header.js": "js/header-1cd02eefdb.js",
+  "js/home_comment.js": "js/home_comment-56f0f02077.js",
+  "js/home_post.js": "js/home_post-fb13b0116f.js",
+  "js/toggle_likes.js": "js/toggle_likes-de5fa56016.js",
+  "js/userProfile.js": "js/userProfile-9878f36a21.js"
 }

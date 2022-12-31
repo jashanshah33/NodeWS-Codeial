@@ -78,13 +78,14 @@ gulp.task("images", function (done) {
 
 // empty the public/assets driectory
 gulp.task("clean:assets", function (done) {
-  deleteAsync("./public/assets");
+  deleteAsync("./public/**");
+
   done();
 });
 
 gulp.task(
   "build",
-  gulp.series("clean:assets", "css", "js", "images"),
+  gulp.series(["clean:assets", "css", "js", "images"]),
   function (done) {
     console.log("Building assets");
     done();

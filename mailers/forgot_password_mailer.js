@@ -8,6 +8,11 @@ exports.forgetPassword = (forgetPasswordUser) => {
     "/forgotPassword/forgotPassword.ejs"
   );
 
+  // const htmlString = nodemailer.renderTemplate(
+  //   { comment: comment },
+  //   "/comments/new_comments.ejs"
+  // );
+
   nodemailer.transporter.sendMail(
     {
       from: "webdeveloperpb18@gmail.com",
