@@ -1025,3 +1025,150 @@
 ::1 - - [31/Dec/2022:12:17:50 +0000] "GET /undefined HTTP/1.1" 404 148 "http://localhost:8000/users/resetPassword" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 [0mPOST /users/resetPassword [32m200[0m 45.079 ms - 1886[0m
 ::1 - - [31/Dec/2022:12:19:47 +0000] "POST /users/resetPassword HTTP/1.1" 200 1941 "http://localhost:8000/users/forgetPassword" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:11:23 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:11:23 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:11:34 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:11:44 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:11:47 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:17 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:19 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:19 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:25 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:26 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:27 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:27 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:27 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:34 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:50 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:51 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:51 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:51 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:52 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:12:52 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:13:04 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:27 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:28 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:28 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:28 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:37 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:37 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:38 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:15:38 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+[0mGET / [32m200[0m 74.845 ms - 15742[0m
+[0mGET / [36m304[0m 34.627 ms - -[0m
+[0mGET / [36m304[0m 33.748 ms - -[0m
+::1 - - [01/Jan/2023:03:17:00 +0000] "GET / HTTP/1.1" 200 5849 "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:01 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:02 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:02 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:10 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:11 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:11 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:12 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:17:12 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:21:18 +0000] "GET / HTTP/1.1" 200 5849 "http://localhost:8000/users/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+::1 - - [01/Jan/2023:03:22:11 +0000] "GET /users/login HTTP/1.1" 200 2550 "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:23:00 +0000] "GET /users/signup HTTP/1.1" 200 2788 "http://localhost:8000/users/login" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:23:03 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/signup" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+[0mGET /css/layout-018dd4006e.css [33m404[0m 4.456 ms - 164[0m
+[0mGET /css/footer-ed8d15c1b5.css [33m404[0m 1.470 ms - 164[0m
+[0mGET /css/home-9eb7446659.css [33m404[0m 5.460 ms - 162[0m
+[0mGET /css/header-0f3a88d2ce.css [33m404[0m 5.869 ms - 164[0m
+[0mGET /users/login [32m200[0m 22.749 ms - 2495[0m
+[0mGET /users/login [36m304[0m 4.852 ms - -[0m
+[0mGET /users/login [36m304[0m 7.396 ms - -[0m
+[0mGET /users/login [36m304[0m 11.117 ms - -[0m
+[0mGET /users/login [36m304[0m 5.837 ms - -[0m
+[0mGET /users/login [36m304[0m 7.258 ms - -[0m
+[0mGET /users/signup [32m200[0m 6.868 ms - 2733[0m
+[0mGET / [32m200[0m 66.725 ms - 15742[0m
+[0mGET /users/login [36m304[0m 5.313 ms - -[0m
+[0mPOST /users/create_session [36m302[0m 12.456 ms - 46[0m
+[0mGET / [32m200[0m 55.326 ms - 19835[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [32m200[0m 17.333 ms - 4041[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 12.290 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 10.990 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 10.351 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 11.554 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 12.828 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 10.044 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 12.245 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 9.289 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 9.016 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 9.853 ms - -[0m
+[0mGET / [32m200[0m 31.061 ms - 19631[0m
+[0mGET / [36m304[0m 35.062 ms - -[0m
+[0mGET / [36m304[0m 32.938 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 13.645 ms - -[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [32m200[0m 12.802 ms - 2562[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [36m304[0m 12.014 ms - -[0m
+[0mGET / [36m304[0m 38.673 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 16.719 ms - -[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [36m304[0m 20.674 ms - -[0m
+[0mGET /users/logout [36m302[0m 7.193 ms - 68[0m
+[0mGET /users/login [32m200[0m 4.621 ms - 2699[0m
+[0mGET /users/signup [36m304[0m 6.353 ms - -[0m
+[0mGET / [32m200[0m 32.166 ms - 15742[0m
+[0mGET /users/login [32m200[0m 3.868 ms - 2495[0m
+[0mGET /users/forgetPassword [32m200[0m 6.420 ms - 2101[0m
+[0mPOST /users/resetPassword [32m200[0m 14.275 ms - 1886[0m
+::1 - - [01/Jan/2023:03:38:19 +0000] "GET / HTTP/1.1" 200 5849 "http://localhost:8000/users/signup" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:38:20 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/signup" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:38:25 +0000] "GET /users/login HTTP/1.1" 200 2550 "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+[0mGET /users/login [32m200[0m 9.922 ms - 2495[0m
+[0mGET /users/signup [36m304[0m 18.545 ms - -[0m
+[0mGET /users/login [36m304[0m 8.364 ms - -[0m
+[0mGET /users/login [36m304[0m 5.618 ms - -[0m
+[0mPOST /users/create_session [36m302[0m 27.232 ms - 46[0m
+[0mGET / [32m200[0m 120.218 ms - 19835[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 25.520 ms - -[0m
+[0mPOST /friends/toggleFriend?id=63a834c4b0196281e46e2abc [32m200[0m 33.913 ms - 65[0m
+[0mPOST /friends/toggleFriend?id=63a834c4b0196281e46e2abc [32m200[0m 20.021 ms - 64[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [32m200[0m 17.452 ms - 4238[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [32m200[0m 17.137 ms - 4041[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 10.126 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 22.542 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 31.019 ms - -[0m
+[0mGET / [32m200[0m 88.809 ms - 19631[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [36m304[0m 21.945 ms - -[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [36m304[0m 13.455 ms - -[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [36m304[0m 11.088 ms - -[0m
+[0mGET / [36m304[0m 62.604 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 17.653 ms - -[0m
+[0mGET / [36m304[0m 68.612 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 15.343 ms - -[0m
+[0mGET / [36m304[0m 54.519 ms - -[0m
+[0mGET / [36m304[0m 35.993 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 29.250 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 20.694 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 19.662 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 23.844 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 8.939 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 12.418 ms - -[0m
+[0mGET /users/logout [36m302[0m 8.323 ms - 68[0m
+[0mGET /users/login [32m200[0m 3.002 ms - 2699[0m
+[0mGET /users/login [32m200[0m 8.853 ms - 2495[0m
+[0mGET /users/signup [36m304[0m 10.268 ms - -[0m
+[0mGET /users/login [36m304[0m 6.036 ms - -[0m
+[0mPOST /users/create_session [36m302[0m 13.013 ms - 46[0m
+[0mGET / [32m200[0m 59.350 ms - 19835[0m
+[0mGET /users/friends?id=63a82fa35ffa6f1b768ca44f [36m304[0m 20.501 ms - -[0m
+[0mGET / [32m200[0m 74.975 ms - 19631[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 22.971 ms - -[0m
+[0mGET / [36m304[0m 68.761 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 21.992 ms - -[0m
+[0mGET / [36m304[0m 78.066 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 22.929 ms - -[0m
+[0mGET / [36m304[0m 67.953 ms - -[0m
+[0mGET /users/profile?id=63a834c4b0196281e46e2abc [36m304[0m 16.084 ms - -[0m
+[0mGET / [36m304[0m 70.329 ms - -[0m
+[0mGET /users/profile?id=63a82fa35ffa6f1b768ca44f [36m304[0m 24.408 ms - -[0m
+::1 - - [01/Jan/2023:03:47:49 +0000] "GET /users/profile?id=63a82fa35ffa6f1b768ca44f HTTP/1.1" 302 68 "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:47:49 +0000] "GET /users/login HTTP/1.1" 200 2550 "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:47:50 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:47:50 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:47:52 +0000] "GET / HTTP/1.1" 200 5849 "http://localhost:8000/users/login" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:48:14 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:48:19 +0000] "GET /users/signup HTTP/1.1" 200 2788 "http://localhost:8000/users/login" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:48:26 +0000] "GET /users/login HTTP/1.1" 304 - "http://localhost:8000/users/signup" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+::1 - - [01/Jan/2023:03:48:52 +0000] "GET /users/signup HTTP/1.1" 304 - "http://localhost:8000/users/login" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36"

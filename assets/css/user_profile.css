@@ -1,5 +1,5 @@
 .outer_container {
-  height: 65vh;
+  height: 78vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,12 +11,11 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  min-height: 90%;
+  min-height: 60%;
+  padding: 20px 0;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.137);
   border-radius: 5%;
-  padding: 10px 0;
   position: relative;
-  margin-top: 30px;
 }
 
 @media only screen and (max-width: 600px) {
